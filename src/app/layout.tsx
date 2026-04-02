@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { ChatBar } from "@/components/chat-bar";
 
@@ -46,6 +48,8 @@ export default function RootLayout({
         </div>
         {children}
         <ChatBar />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
