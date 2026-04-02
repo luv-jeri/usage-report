@@ -80,7 +80,9 @@ export function ChatBar() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           message: trimmed,
-          history: messages.map((m) => ({ role: m.role, content: m.content })),
+          history: messages
+            .filter((m) => !m.content.startsWith("Error:") && m.content.trim())
+            .map((m) => ({ role: m.role, content: m.content })),
         }),
         signal: abortRef.current.signal,
       });
