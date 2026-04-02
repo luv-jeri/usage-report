@@ -12,6 +12,29 @@ const COLORS: Record<string, string> = {
   CLOSED: "#737373",
 };
 
+const RADIAN = Math.PI / 180;
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function renderLabel(props: any) {
+  const { cx, cy, midAngle, outerRadius, name, value, percent } = props;
+  if (percent < 0.03) return null;
+  const radius = outerRadius + 14;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+  return (
+    <text
+      x={x}
+      y={y}
+      fill="var(--muted-foreground)"
+      textAnchor={x > cx ? "start" : "end"}
+      dominantBaseline="central"
+      fontSize={10}
+    >
+      {name} ({value})
+    </text>
+  );
+}
+
 export function PRStatusChart({ prs }: Props) {
   const counts: Record<string, number> = {};
   for (const pr of prs) {
@@ -26,12 +49,14 @@ export function PRStatusChart({ prs }: Props) {
           data={data}
           cx="50%"
           cy="50%"
-          innerRadius={45}
-          outerRadius={65}
+          innerRadius={35}
+          outerRadius={55}
           paddingAngle={3}
           dataKey="value"
           animationDuration={1000}
           animationBegin={300}
+          label={renderLabel}
+          labelLine={false}
         >
           {data.map((entry) => (
             <Cell key={entry.name} fill={COLORS[entry.name] || "#525252"} />

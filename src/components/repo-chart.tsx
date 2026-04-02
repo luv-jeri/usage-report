@@ -6,7 +6,6 @@ import {
   Cell,
   ResponsiveContainer,
   Tooltip,
-  Legend,
 } from "recharts";
 
 interface Props {
@@ -22,6 +21,29 @@ const COLORS = [
   "#f97316",
   "#93c5fd",
 ];
+
+const RADIAN = Math.PI / 180;
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function renderLabel(props: any) {
+  const { cx, cy, midAngle, outerRadius, name, value, percent } = props;
+  if (percent < 0.05) return null;
+  const radius = outerRadius + 18;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
+  return (
+    <text
+      x={x}
+      y={y}
+      fill="var(--muted-foreground)"
+      textAnchor={x > cx ? "start" : "end"}
+      dominantBaseline="central"
+      fontSize={10}
+    >
+      {name} ({value})
+    </text>
+  );
+}
 
 export function RepoChart({ repoBreakdown }: Props) {
   const chartData = Object.entries(repoBreakdown)
@@ -39,12 +61,14 @@ export function RepoChart({ repoBreakdown }: Props) {
           data={chartData}
           cx="50%"
           cy="50%"
-          innerRadius={50}
-          outerRadius={100}
+          innerRadius={45}
+          outerRadius={85}
           paddingAngle={2}
           dataKey="value"
           animationDuration={1200}
           animationBegin={200}
+          label={renderLabel}
+          labelLine={false}
         >
           {chartData.map((_, index) => (
             <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />

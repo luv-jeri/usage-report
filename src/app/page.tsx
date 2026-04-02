@@ -2,6 +2,7 @@ import { loadData } from "@/lib/data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { Download, FileSpreadsheet, FileText, Receipt } from "lucide-react";
 import { DailyTokenChart } from "@/components/daily-token-chart";
 import { HourlyChart } from "@/components/hourly-chart";
 import { RepoChart } from "@/components/repo-chart";
@@ -47,7 +48,7 @@ export default function ReportPage() {
   return (
     <>
       <SideNav />
-      <main className="min-h-screen py-8 px-4 md:px-8 lg:px-10 max-w-[1400px] mx-auto lg:pr-24 relative z-[1]">
+      <main className="min-h-screen bg-background py-8 px-4 md:px-8 lg:px-10 max-w-[1400px] mx-auto lg:pr-24">
 
         {/* ═══ HERO ═══ */}
         <section id="hero">
@@ -358,6 +359,31 @@ export default function ReportPage() {
                     </Narrative>
                   </div>
                 </div>
+                {/* Billing receipt previews */}
+                <div className="mt-8 pt-6 border-t border-border/30">
+                  <p className="text-xs text-muted-foreground uppercase tracking-widest mb-4">Billing Receipts</p>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {[
+                      { name: "Receipt-2522-7439-7590.pdf", path: "/receipt/Receipt-2522-7439-7590.pdf" },
+                      { name: "Receipt-2573-1755-3555.pdf", path: "/receipt/Receipt-2573-1755-3555.pdf" },
+                      { name: "Receipt-2688-4118-1190.pdf", path: "/receipt/Receipt-2688-4118-1190.pdf" },
+                      { name: "Receipt-2976-2914-6118.pdf", path: "/receipt/Receipt-2976-2914-6118.pdf" },
+                    ].map((file) => (
+                      <a
+                        key={file.name}
+                        href={file.path}
+                        download
+                        className="flex flex-col items-center gap-2 px-4 py-4 rounded-lg bg-card/60 border border-border/50 hover:border-[#a855f7]/40 hover:bg-[#a855f7]/5 transition-all group"
+                      >
+                        <Receipt className="h-8 w-8 text-muted-foreground group-hover:text-[#a855f7] transition-colors" />
+                        <span className="text-[10px] font-mono text-muted-foreground group-hover:text-foreground transition-colors text-center leading-tight">
+                          {file.name.replace("Receipt-", "").replace(".pdf", "")}
+                        </span>
+                        <Badge variant="secondary" className="text-[9px] px-1.5 py-0">PDF</Badge>
+                      </a>
+                    ))}
+                  </div>
+                </div>
               </CardContent>
             </Card>
           </section>
@@ -442,6 +468,132 @@ export default function ReportPage() {
                       <span className="text-foreground/80">{item}</span>
                     </div>
                   ))}
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+
+          {/* ── DOWNLOADS SECTION ── */}
+          <section id="downloads" className="col-span-full">
+            <Card className="bento-card animate-fade-in delay-200 bg-gradient-to-br from-[#a855f7]/6 via-background to-[#7c3aed]/4 border-[#a855f7]/15">
+              <CardHeader className="pb-2 px-8 pt-6">
+                <div className="flex items-center gap-3">
+                  <Download className="h-5 w-5 text-[#a855f7]" />
+                  <CardTitle className="text-base">Download Raw Data</CardTitle>
+                </div>
+                <p className="text-sm text-muted-foreground mt-1">
+                  All source data is available for download. Run your own analysis or verify the numbers independently.
+                </p>
+              </CardHeader>
+              <CardContent className="px-8 pb-8">
+                <div className="grid md:grid-cols-3 gap-6 mt-2">
+                  {/* Processed Data */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 mb-4">
+                      <FileSpreadsheet className="h-4 w-4 text-[#a855f7]" />
+                      <p className="text-xs text-muted-foreground uppercase tracking-widest font-medium">Processed Data</p>
+                    </div>
+                    {[
+                      { name: "commits.csv", path: "/data/commits.csv", size: "17 KB", format: "CSV" },
+                      { name: "cursor-usage.csv", path: "/data/cursor-usage.csv", size: "94 KB", format: "CSV" },
+                      { name: "prs.json", path: "/data/prs.json", size: "14 KB", format: "JSON" },
+                      { name: "summary.json", path: "/data/summary.json", size: "1 KB", format: "JSON" },
+                      { name: "company-contributions.json", path: "/data/company-contributions.json", size: "3 KB", format: "JSON" },
+                    ].map((file) => (
+                      <a
+                        key={file.name}
+                        href={file.path}
+                        download
+                        className="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg bg-card/60 border border-border/50 hover:border-[#a855f7]/40 hover:bg-[#a855f7]/5 transition-all group"
+                      >
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <Download className="h-3.5 w-3.5 text-muted-foreground group-hover:text-[#a855f7] transition-colors shrink-0" />
+                          <span className="text-sm font-mono text-foreground/80 group-hover:text-foreground truncate transition-colors">{file.name}</span>
+                        </div>
+                        <div className="flex items-center gap-2 shrink-0">
+                          <span className="text-[10px] text-muted-foreground">{file.size}</span>
+                          <Badge variant="secondary" className="text-[9px] px-1.5 py-0">{file.format}</Badge>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+
+                  {/* Raw Data */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 mb-4">
+                      <FileText className="h-4 w-4 text-[#a855f7]" />
+                      <p className="text-xs text-muted-foreground uppercase tracking-widest font-medium">Raw Source Data</p>
+                    </div>
+                    {[
+                      { name: "github_commits_30days.csv", path: "/data-raw/github_commits_30days.csv", size: "17 KB", format: "CSV" },
+                      { name: "github_prs_30days.json", path: "/data-raw/github_prs_30days.json", size: "14 KB", format: "JSON" },
+                      { name: "github_summary.json", path: "/data-raw/github_summary.json", size: "1 KB", format: "JSON" },
+                      { name: "team-usage-events.csv", path: "/data-raw/team-usage-events-22215906-2026-04-02.csv", size: "94 KB", format: "CSV" },
+                    ].map((file) => (
+                      <a
+                        key={file.name}
+                        href={file.path}
+                        download
+                        className="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg bg-card/60 border border-border/50 hover:border-[#a855f7]/40 hover:bg-[#a855f7]/5 transition-all group"
+                      >
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <Download className="h-3.5 w-3.5 text-muted-foreground group-hover:text-[#a855f7] transition-colors shrink-0" />
+                          <span className="text-sm font-mono text-foreground/80 group-hover:text-foreground truncate transition-colors">{file.name}</span>
+                        </div>
+                        <div className="flex items-center gap-2 shrink-0">
+                          <span className="text-[10px] text-muted-foreground">{file.size}</span>
+                          <Badge variant="secondary" className="text-[9px] px-1.5 py-0">{file.format}</Badge>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+
+                  {/* Billing Receipts */}
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-2 mb-4">
+                      <Receipt className="h-4 w-4 text-[#a855f7]" />
+                      <p className="text-xs text-muted-foreground uppercase tracking-widest font-medium">Billing Receipts</p>
+                    </div>
+                    {[
+                      { name: "Receipt-2522-7439-7590.pdf", path: "/receipt/Receipt-2522-7439-7590.pdf", size: "32 KB" },
+                      { name: "Receipt-2573-1755-3555.pdf", path: "/receipt/Receipt-2573-1755-3555.pdf", size: "33 KB" },
+                      { name: "Receipt-2688-4118-1190.pdf", path: "/receipt/Receipt-2688-4118-1190.pdf", size: "35 KB" },
+                      { name: "Receipt-2976-2914-6118.pdf", path: "/receipt/Receipt-2976-2914-6118.pdf", size: "34 KB" },
+                    ].map((file) => (
+                      <a
+                        key={file.name}
+                        href={file.path}
+                        download
+                        className="flex items-center justify-between gap-3 px-3 py-2.5 rounded-lg bg-card/60 border border-border/50 hover:border-[#a855f7]/40 hover:bg-[#a855f7]/5 transition-all group"
+                      >
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <Download className="h-3.5 w-3.5 text-muted-foreground group-hover:text-[#a855f7] transition-colors shrink-0" />
+                          <span className="text-sm font-mono text-foreground/80 group-hover:text-foreground truncate transition-colors">{file.name}</span>
+                        </div>
+                        <div className="flex items-center gap-2 shrink-0">
+                          <span className="text-[10px] text-muted-foreground">{file.size}</span>
+                          <Badge variant="secondary" className="text-[9px] px-1.5 py-0">PDF</Badge>
+                        </div>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                {/* AI Analysis Prompt */}
+                <div className="mt-8 pt-6 border-t border-border/30">
+                  <p className="text-xs text-muted-foreground uppercase tracking-widest mb-3">Verify with AI</p>
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Download the data files above, then paste this prompt into any AI assistant (ChatGPT, Claude, Gemini) along with the CSV/JSON files:
+                  </p>
+                  <div className="bg-card/80 border border-border/50 rounded-lg p-4 font-mono text-xs text-foreground/70 leading-relaxed">
+                    <p className="text-[#a855f7] mb-2 font-sans text-[10px] uppercase tracking-widest font-medium">Prompt to copy:</p>
+                    <p>I&apos;m sharing Cursor usage data (cursor-usage.csv), GitHub commit history (commits.csv), pull requests (prs.json), and company contribution stats (company-contributions.json). Please analyze this data and answer:</p>
+                    <p className="mt-2">1. What percentage of Cursor usage correlates with actual code commits?</p>
+                    <p>2. What are the peak working hours and do they match commit timestamps?</p>
+                    <p>3. How does the developer rank among team contributors by lines of code?</p>
+                    <p>4. Is there evidence of non-work usage during work hours?</p>
+                    <p>5. Provide a summary of productivity metrics with charts.</p>
+                  </div>
                 </div>
               </CardContent>
             </Card>

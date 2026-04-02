@@ -16,6 +16,7 @@ const sections = [
   { id: "investment", label: "Investment" },
   { id: "projects", label: "Projects" },
   { id: "actions", label: "Actions" },
+  { id: "downloads", label: "Downloads" },
 ];
 
 export function SideNav() {

@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  Bar, BarChart, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell,
+  Bar, BarChart, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, LabelList,
 } from "recharts";
 
 interface Props {
@@ -43,7 +43,14 @@ export function ModelBarChart({ modelUsage }: Props) {
             return [String(value), String(name)];
           }}
         />
-        <Bar dataKey="tokens" fill="url(#barGradient)" radius={[0, 6, 6, 0]} animationDuration={1200} animationBegin={200} />
+        <Bar dataKey="tokens" fill="url(#barGradient)" radius={[0, 6, 6, 0]} animationDuration={1200} animationBegin={200}>
+          <LabelList
+            dataKey="tokens"
+            position="right"
+            formatter={(v) => `${v}M`}
+            style={{ fill: "var(--muted-foreground)", fontSize: 10 }}
+          />
+        </Bar>
       </BarChart>
     </ResponsiveContainer>
   );

@@ -1,34 +1,34 @@
 Date,Time_IST,Repo,Repo_Type,SHA,Commit_Message
 2026-04-01,18:36:44,Evolphin-Software/evolphin-x,Company,d4521d1,Merge pull request #124 from Evolphin-Software/fix/duplicate-detection-folder-scope
 2026-04-01,18:31:10,Evolphin-Software/evolphin-x,Company,9af4732,fix: duplicate detection scope and rename collision for folder uploads
-2026-04-01,01:16:47,luv-jeri/nonlu-skill,Company,1dae99b,"docs: overhaul README with better structure, visuals, and pixel-first focus"
-2026-04-01,01:06:54,luv-jeri/nonlu-skill,Company,92919a5,chore: update repo URL after rename to nonlu-skill
-2026-04-01,00:58:31,luv-jeri/nonlu-skill,Company,6f53035,feat(pixel): add Figma-to-pixel-perfect UI skill
-2026-04-01,00:01:36,luv-jeri/nonlu-skill,Company,a785060,feat(boost): add team collaboration features and overhaul README
-2026-03-31,23:44:36,luv-jeri/nonlu-skill,Company,3ce110a,chore: add repository URL to package.json
-2026-03-31,23:41:36,luv-jeri/nonlu-skill,Company,9b8d2cf,"feat(boost): add starter patterns, README, and contributor conventions"
-2026-03-31,23:41:07,luv-jeri/nonlu-skill,Company,bf718ae,feat(boost): add evaluation framework — trigger tests and quality rubric
-2026-03-31,23:39:39,luv-jeri/nonlu-skill,Company,680476f,feat(boost): add enhanced templates with before/after examples and anti-patterns
-2026-03-31,23:39:16,luv-jeri/nonlu-skill,Company,60fe222,feat(boost): add 7 complete before/after transformation examples
-2026-03-31,23:39:09,luv-jeri/nonlu-skill,Company,df02007,feat(boost): add enhanced context discovery with edge cases and secrets avoidance
-2026-03-31,23:37:44,luv-jeri/nonlu-skill,Company,6306b0b,feat(boost): add complete 9-step flow with flowchart and edge cases
-2026-03-31,23:37:40,luv-jeri/nonlu-skill,Company,488ddbe,feat(boost): add prompt passthrough detection for already-structured prompts
-2026-03-31,23:37:32,luv-jeri/nonlu-skill,Company,a65738d,"feat(boost): add iron laws, rationalization prevention, and DO NOTs"
-2026-03-31,23:36:21,luv-jeri/nonlu-skill,Company,2cc430b,feat(boost): add lean trigger-only SKILL.md
-2026-03-31,23:36:18,luv-jeri/nonlu-skill,Company,a9cd79a,"feat: add package metadata, MIT license, and marketplace listing"
-2026-03-31,23:35:48,luv-jeri/nonlu-skill,Company,637b258,"chore: remove v1 skill files, create v2 directory structure"
-2026-03-31,23:35:32,luv-jeri/nonlu-skill,Company,38c9dae,docs: add boost v2 premium implementation plan (15 tasks)
-2026-03-31,23:29:18,luv-jeri/nonlu-skill,Company,0814df4,docs: add boost v2 premium plugin design spec
-2026-03-31,23:01:48,luv-jeri/nonlu-skill,Company,4593c3c,fix(boost): add missing tie-breaking rationale to Cursor SKILL.md for consistency
-2026-03-31,23:00:05,luv-jeri/nonlu-skill,Company,5496ab1,feat(boost): add Cursor skill with SKILL.md and shared reference files
-2026-03-31,22:59:14,luv-jeri/nonlu-skill,Company,dd154a4,feat(boost): add core SKILL.md with full prompt enhancement flow
-2026-03-31,22:58:59,luv-jeri/nonlu-skill,Company,92efd03,feat(boost): add starter boost-patterns.md for team-shared conventions
-2026-03-31,22:58:38,luv-jeri/nonlu-skill,Company,0618f69,feat(boost): add Cursor MDC trigger rule for /boost invocation
-2026-03-31,22:57:13,luv-jeri/nonlu-skill,Company,546b9b6,feat(boost): add 7 structured task templates for prompt enhancement
-2026-03-31,22:57:09,luv-jeri/nonlu-skill,Company,f70dfa7,feat(boost): add context discovery rules with priority-based resolution
+2026-04-01,01:16:47,luv-jeri/nonlu-skill,Personal,1dae99b,"docs: overhaul README with better structure, visuals, and pixel-first focus"
+2026-04-01,01:06:54,luv-jeri/nonlu-skill,Personal,92919a5,chore: update repo URL after rename to nonlu-skill
+2026-04-01,00:58:31,luv-jeri/nonlu-skill,Personal,6f53035,feat(pixel): add Figma-to-pixel-perfect UI skill
+2026-04-01,00:01:36,luv-jeri/nonlu-skill,Personal,a785060,feat(boost): add team collaboration features and overhaul README
+2026-03-31,23:44:36,luv-jeri/nonlu-skill,Personal,3ce110a,chore: add repository URL to package.json
+2026-03-31,23:41:36,luv-jeri/nonlu-skill,Personal,9b8d2cf,"feat(boost): add starter patterns, README, and contributor conventions"
+2026-03-31,23:41:07,luv-jeri/nonlu-skill,Personal,bf718ae,feat(boost): add evaluation framework — trigger tests and quality rubric
+2026-03-31,23:39:39,luv-jeri/nonlu-skill,Personal,680476f,feat(boost): add enhanced templates with before/after examples and anti-patterns
+2026-03-31,23:39:16,luv-jeri/nonlu-skill,Personal,60fe222,feat(boost): add 7 complete before/after transformation examples
+2026-03-31,23:39:09,luv-jeri/nonlu-skill,Personal,df02007,feat(boost): add enhanced context discovery with edge cases and secrets avoidance
+2026-03-31,23:37:44,luv-jeri/nonlu-skill,Personal,6306b0b,feat(boost): add complete 9-step flow with flowchart and edge cases
+2026-03-31,23:37:40,luv-jeri/nonlu-skill,Personal,488ddbe,feat(boost): add prompt passthrough detection for already-structured prompts
+2026-03-31,23:37:32,luv-jeri/nonlu-skill,Personal,a65738d,"feat(boost): add iron laws, rationalization prevention, and DO NOTs"
+2026-03-31,23:36:21,luv-jeri/nonlu-skill,Personal,2cc430b,feat(boost): add lean trigger-only SKILL.md
+2026-03-31,23:36:18,luv-jeri/nonlu-skill,Personal,a9cd79a,"feat: add package metadata, MIT license, and marketplace listing"
+2026-03-31,23:35:48,luv-jeri/nonlu-skill,Personal,637b258,"chore: remove v1 skill files, create v2 directory structure"
+2026-03-31,23:35:32,luv-jeri/nonlu-skill,Personal,38c9dae,docs: add boost v2 premium implementation plan (15 tasks)
+2026-03-31,23:29:18,luv-jeri/nonlu-skill,Personal,0814df4,docs: add boost v2 premium plugin design spec
+2026-03-31,23:01:48,luv-jeri/nonlu-skill,Personal,4593c3c,fix(boost): add missing tie-breaking rationale to Cursor SKILL.md for consistency
+2026-03-31,23:00:05,luv-jeri/nonlu-skill,Personal,5496ab1,feat(boost): add Cursor skill with SKILL.md and shared reference files
+2026-03-31,22:59:14,luv-jeri/nonlu-skill,Personal,dd154a4,feat(boost): add core SKILL.md with full prompt enhancement flow
+2026-03-31,22:58:59,luv-jeri/nonlu-skill,Personal,92efd03,feat(boost): add starter boost-patterns.md for team-shared conventions
+2026-03-31,22:58:38,luv-jeri/nonlu-skill,Personal,0618f69,feat(boost): add Cursor MDC trigger rule for /boost invocation
+2026-03-31,22:57:13,luv-jeri/nonlu-skill,Personal,546b9b6,feat(boost): add 7 structured task templates for prompt enhancement
+2026-03-31,22:57:09,luv-jeri/nonlu-skill,Personal,f70dfa7,feat(boost): add context discovery rules with priority-based resolution
 2026-03-31,19:55:00,Evolphin-Software/project-x-connector,Company,ab77cdc,Merge pull request #20 from Evolphin-Software/fix/download-progress-endpoint-post-method
-2026-03-31,19:53:29,luv-jeri/nonlu-skill,Company,f623b51,docs: add boost skill spec and implementation plan
-2026-03-31,19:53:24,luv-jeri/nonlu-skill,Company,9d23f6f,chore: initial repo setup with .gitignore
+2026-03-31,19:53:29,luv-jeri/nonlu-skill,Personal,f623b51,docs: add boost skill spec and implementation plan
+2026-03-31,19:53:24,luv-jeri/nonlu-skill,Personal,9d23f6f,chore: initial repo setup with .gitignore
 2026-03-31,18:00:22,Evolphin-Software/evolphin-x,Company,a2edc75,Merge pull request #121 from Evolphin-Software/feat/share-asset
 2026-03-31,17:56:52,Evolphin-Software/evolphin-x,Company,58969df,"merge: resolve conflicts with meraki, keep both share and download features"
 2026-03-31,17:47:53,Evolphin-Software/project-x-connector,Company,670bcb0,fix:Change HTTP method for progress endpoint from GET to POST in DownloadResource class
