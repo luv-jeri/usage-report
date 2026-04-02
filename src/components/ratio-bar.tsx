@@ -10,7 +10,7 @@ export function RatioBar({ company, personal }: Props) {
   return (
     <div className="space-y-2">
       <div className="flex justify-between text-xs">
-        <span className="text-muted-foreground">Company Commits</span>
+        <span className="text-muted-foreground flex items-center gap-1.5"><img src="/logos/evolphin-icon.svg" alt="" width={14} height={14} /> Evolphin Commits</span>
         <span className="highlight-strong">{pct}%</span>
       </div>
       <div className="h-3 rounded-full bg-secondary overflow-hidden">
@@ -20,7 +20,7 @@ export function RatioBar({ company, personal }: Props) {
         />
       </div>
       <div className="flex justify-between text-xs text-muted-foreground">
-        <span>{company} company</span>
+        <span>{company} Evolphin</span>
         <span>{personal} personal</span>
       </div>
     </div>

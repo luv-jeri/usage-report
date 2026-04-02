@@ -41,7 +41,7 @@ export function CommitTimeline({ commits }: { commits: Commit[] }) {
                   variant={c.repoType === "Company" ? "default" : "secondary"}
                   className="text-[10px] px-1.5 py-0 shrink-0"
                 >
-                  {c.repoType === "Company" ? "Co" : "Per"}
+                  {c.repoType === "Company" ? "Evo" : "Per"}
                 </Badge>
                 <span className="font-mono text-xs text-muted-foreground shrink-0">
                   {c.sha}

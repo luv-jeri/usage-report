@@ -2,7 +2,12 @@ import { loadData } from "@/lib/data";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Download, FileSpreadsheet, FileText, Receipt } from "lucide-react";
+import {
+  Download, FileSpreadsheet, FileText, Receipt,
+  CreditCard, Flame, Clock, GitCommit, Building2, FileSearch,
+  Wallet, Lightbulb, CheckCircle, BarChart3, Cpu, GitPullRequest,
+  GitBranch, Activity, Zap, TrendingUp, Calendar, Hash
+} from "lucide-react";
 import { DailyTokenChart } from "@/components/daily-token-chart";
 import { HourlyChart } from "@/components/hourly-chart";
 import { RepoChart } from "@/components/repo-chart";
@@ -12,6 +17,7 @@ import { RatioBar } from "@/components/ratio-bar";
 import { TabbedDetails } from "@/components/tabbed-details";
 import { SideNav } from "@/components/side-nav";
 import { ContributorChart } from "@/components/contributor-chart";
+import { RepoContribCards } from "@/components/repo-contrib-card";
 
 function formatDate(dateStr: string) {
   const d = new Date(dateStr + "T00:00:00");
@@ -29,6 +35,22 @@ function StatCard({ label, value, detail, delay = "", accent = false }: {
         {detail && <p className="text-sm text-muted-foreground mt-2">{detail}</p>}
       </CardContent>
     </Card>
+  );
+}
+
+function SectionHeader({ id, icon: Icon, title, subtitle }: {
+  id?: string; icon: React.ComponentType<{ className?: string }>; title: string; subtitle?: string;
+}) {
+  return (
+    <div id={id} className="col-span-full flex items-center gap-3 pt-6 pb-1">
+      <div className="p-2 rounded-lg bg-[#a855f7]/10">
+        <Icon className="h-5 w-5 text-[#a855f7]" />
+      </div>
+      <div>
+        <h2 className="text-xl font-bold tracking-tight">{title}</h2>
+        {subtitle && <p className="text-sm text-muted-foreground mt-0.5">{subtitle}</p>}
+      </div>
+    </div>
   );
 }
 
@@ -73,7 +95,7 @@ export default function ReportPage() {
                 </p>
                 <Separator orientation="vertical" className="h-4" />
                 <div className="flex items-center gap-3 text-xs text-muted-foreground">
-                  <span className="flex items-center gap-1.5"><Badge variant="default" className="text-[8px] px-1.5 py-0">Co</Badge> = Company</span>
+                  <span className="flex items-center gap-1.5"><span className="inline-flex items-center gap-1 bg-primary text-primary-foreground px-1.5 py-0 rounded-sm text-[8px]"><img src="/logos/evolphin-icon.svg" alt="" className="h-3 w-3" />Evo</span> = Evolphin</span>
                   <span className="flex items-center gap-1.5"><Badge variant="secondary" className="text-[8px] px-1.5 py-0">Per</Badge> = Personal</span>
                 </div>
               </div>
@@ -85,7 +107,8 @@ export default function ReportPage() {
         <div className="bento-grid">
 
           {/* ── BILLING SECTION ── */}
-          <section id="billing" className="col-span-full">
+          <SectionHeader id="billing" icon={CreditCard} title="Cursor Billing" subtitle="Peak day usage and cost breakdown" />
+          <section className="col-span-full">
             <div className="bento-grid">
               <StatCard label="Peak Day" value={data.cursor.highestDay ? formatDate(data.cursor.highestDay.date) : "—"} accent delay="delay-100" />
               <StatCard label="Peak Tokens" value={`${((data.cursor.highestDay?.tokens || 0) / 1_000_000).toFixed(1)}M`} delay="delay-200" />
@@ -95,10 +118,11 @@ export default function ReportPage() {
           </section>
 
           {/* ── Peak Day: What was built + Chart ── */}
-          <section id="peak-day" className="col-span-2">
+          <SectionHeader id="peak-day" icon={Flame} title="Peak Day Analysis" subtitle="What was built on the highest usage day" />
+          <section className="col-span-2">
             <Card className="bento-card animate-fade-in delay-300 h-full">
               <CardHeader className="pb-3 px-6 pt-6">
-                <CardTitle className="text-base">What Was Being Built on Peak Day</CardTitle>
+                <CardTitle className="text-base flex items-center gap-2"><Zap className="h-4 w-4 text-[#a855f7]" />What Was Being Built on Peak Day</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 px-6 pb-6">
                 <Narrative>
@@ -135,7 +159,7 @@ export default function ReportPage() {
 
           <Card className="col-span-2 bento-card animate-fade-in delay-400">
             <CardHeader className="pb-3 px-6 pt-6">
-              <CardTitle className="text-base">Daily Token Usage (Top 10 Days)</CardTitle>
+              <CardTitle className="text-base flex items-center gap-2"><BarChart3 className="h-4 w-4 text-[#a855f7]" />Daily Token Usage (Top 10 Days)</CardTitle>
             </CardHeader>
             <CardContent className="px-6 pb-6">
               <DailyTokenChart data={data.cursor.sortedDays} />
@@ -145,14 +169,15 @@ export default function ReportPage() {
           {/* ── Overall stats ── */}
           <StatCard label="Total Requests" value={String(data.cursor.totalRequests)} detail={`${data.cursor.freeRequests} free · ${data.cursor.paidRequests} paid`} delay="delay-100" />
           <StatCard label="Total Cost" value={`$${data.cursor.totalCost.toFixed(2)}`} detail="On-demand charges" delay="delay-200" />
-          <StatCard label="Total Commits" value={String(data.commits.total)} detail={`${data.commits.company} company · ${data.commits.personal} personal`} delay="delay-300" />
-          <StatCard label="Pull Requests" value={String(data.prs.total)} detail={`${data.prs.merged} merged · all company repos`} delay="delay-400" />
+          <StatCard label="Total Commits" value={String(data.commits.total)} detail={`${data.commits.company} Evolphin · ${data.commits.personal} personal`} delay="delay-300" />
+          <StatCard label="Pull Requests" value={String(data.prs.total)} detail={`${data.prs.merged} merged · all Evolphin repos`} delay="delay-400" />
 
           {/* ── HOURS SECTION ── */}
-          <section id="hours" className="col-span-3">
+          <SectionHeader id="hours" icon={Clock} title="Working Hours" subtitle="Cursor usage and commit activity by hour" />
+          <section className="col-span-3">
             <Card className="bento-card animate-fade-in delay-200">
               <CardHeader className="pb-3 px-6 pt-6">
-                <CardTitle className="text-base">Working Hours &mdash; Cursor Usage &amp; Commits Overlaid (IST)</CardTitle>
+                <CardTitle className="text-base flex items-center gap-2"><Activity className="h-4 w-4 text-[#a855f7]" />Working Hours &mdash; Cursor Usage &amp; Commits Overlaid (IST)</CardTitle>
               </CardHeader>
               <CardContent className="px-6 pb-6">
                 <Narrative>
@@ -172,7 +197,7 @@ export default function ReportPage() {
 
           <Card className="col-span-1 bento-card animate-fade-in delay-300">
             <CardHeader className="pb-3 px-6 pt-6">
-              <CardTitle className="text-base">Models Used</CardTitle>
+              <CardTitle className="text-base flex items-center gap-2"><Cpu className="h-4 w-4 text-[#a855f7]" />Models Used</CardTitle>
             </CardHeader>
             <CardContent className="px-6 pb-6">
               <ModelBarChart modelUsage={data.cursor.modelUsage} />
@@ -180,10 +205,11 @@ export default function ReportPage() {
           </Card>
 
           {/* ── OUTPUT SECTION ── */}
-          <section id="output" className="col-span-1">
+          <SectionHeader id="output" icon={GitCommit} title="Work Output" subtitle="Commit distribution and repository breakdown" />
+          <section className="col-span-1">
             <Card className="bento-card animate-fade-in delay-100 h-full">
               <CardHeader className="pb-2 px-6 pt-6">
-                <CardTitle className="text-base">Commit Distribution</CardTitle>
+                <CardTitle className="text-base flex items-center gap-2"><GitBranch className="h-4 w-4 text-[#a855f7]" />Commit Distribution</CardTitle>
               </CardHeader>
               <CardContent className="px-6 pb-6">
                 <RepoChart repoBreakdown={data.commits.repoBreakdown} />
@@ -193,14 +219,14 @@ export default function ReportPage() {
 
           <Card className="col-span-1 bento-card animate-fade-in delay-200">
             <CardHeader className="pb-3 px-6 pt-6">
-              <CardTitle className="text-base">Company vs Personal</CardTitle>
+              <CardTitle className="text-base flex items-center gap-2"><img src="/logos/evolphin-icon.svg" alt="" className="h-4 w-4" /> Evolphin vs Personal</CardTitle>
             </CardHeader>
             <CardContent className="space-y-5 px-6 pb-6">
               <RatioBar company={data.commits.company} personal={data.commits.personal} />
               <Separator />
               <div className="text-center">
                 <p className="text-4xl font-bold highlight-strong">{companyPct}%</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-widest mt-1">Company Commits</p>
+                <p className="text-xs text-muted-foreground uppercase tracking-widest mt-1">Evolphin Commits</p>
               </div>
               <Separator />
               <div className="text-center">
@@ -211,16 +237,17 @@ export default function ReportPage() {
           </Card>
 
           {/* ── DETAILS SECTION ── */}
-          <section id="details" className="col-span-2 row-span-2">
+          <SectionHeader id="details" icon={FileSearch} title="Pull Requests & Commits" subtitle="Full list of PRs and commit history" />
+          <section className="col-span-2 row-span-2">
             <Card className="bento-card animate-fade-in delay-300 h-full">
               <CardHeader className="pb-3 px-6 pt-6">
-                <CardTitle className="text-base">Pull Requests &amp; Commits</CardTitle>
+                <CardTitle className="text-base flex items-center gap-2"><GitPullRequest className="h-4 w-4 text-[#a855f7]" />Pull Requests &amp; Commits</CardTitle>
               </CardHeader>
               <CardContent className="px-6 pb-6">
                 <Narrative>
                   <p>
                     <span className="highlight-strong">Every pull request</span> I created during this period was in a
-                    <span className="highlight"> company repository</span>. The work includes features (upload flow, download, share asset,
+                    <span className="highlight"> Evolphin repository</span>. The work includes features (upload flow, download, share asset,
                     search, runtime config), bug fixes, refactors, and UI improvements.
                   </p>
                 </Narrative>
@@ -233,7 +260,7 @@ export default function ReportPage() {
 
           <Card className="col-span-1 bento-card animate-fade-in delay-400">
             <CardHeader className="pb-2 px-6 pt-6">
-              <CardTitle className="text-base">PR Status</CardTitle>
+              <CardTitle className="text-base flex items-center gap-2"><TrendingUp className="h-4 w-4 text-[#a855f7]" />PR Status</CardTitle>
             </CardHeader>
             <CardContent className="flex flex-col items-center px-6 pb-6">
               <PRStatusChart prs={data.prs.list} />
@@ -247,7 +274,7 @@ export default function ReportPage() {
 
           <Card className="col-span-1 bento-card animate-fade-in delay-500">
             <CardHeader className="pb-3 px-6 pt-6">
-              <CardTitle className="text-base">Repo Breakdown</CardTitle>
+              <CardTitle className="text-base flex items-center gap-2"><Hash className="h-4 w-4 text-[#a855f7]" />Repo Breakdown</CardTitle>
             </CardHeader>
             <CardContent className="px-6 pb-6">
               <div className="space-y-3">
@@ -256,8 +283,8 @@ export default function ReportPage() {
                   .map(([repo, info]) => (
                     <div key={repo} className="flex items-center justify-between text-sm">
                       <div className="flex items-center gap-2">
-                        <Badge variant={info.type === "Company" ? "default" : "secondary"} className="text-[9px] px-1.5 py-0">
-                          {info.type === "Company" ? "Co" : "Per"}
+                        <Badge variant={info.type === "Company" ? "default" : "secondary"} className="text-[9px] px-1.5 py-0 flex items-center gap-1">
+                          {info.type === "Company" ? <span className="inline-flex items-center gap-1"><img src="/logos/evolphin-icon.svg" alt="" className="h-3 w-3" />Evo</span> : "Per"}
                         </Badge>
                         <span className="font-mono text-foreground/70">{repo.split("/")[1]}</span>
                       </div>
@@ -272,7 +299,8 @@ export default function ReportPage() {
           </Card>
 
           {/* ── COMPANY CONTRIBUTIONS ── */}
-          <section id="company-work" className="col-span-full">
+          <SectionHeader id="company-work" icon={Building2} title="Evolphin Contributions" subtitle="Lines of code and rankings across Evolphin repos" />
+          <section className="col-span-full">
             <div className="bento-grid">
               {/* Summary stat cards */}
               <StatCard label="Org Repos Contributed" value={String(data.companyContributions.reposContributed)} detail={`of ${data.companyContributions.totalOrgRepos} total`} accent delay="delay-100" />
@@ -280,40 +308,13 @@ export default function ReportPage() {
               <StatCard label="Primary Repos Rank" value="#1" detail="Top contributor by LOC in all 3 repos" accent delay="delay-300" />
               <StatCard label="Repos Contributed" value={String(data.companyContributions.primaryRepos.length + data.companyContributions.otherRepos.length)} detail={`${data.companyContributions.primaryRepos.length} primary · ${data.companyContributions.otherRepos.length} other`} delay="delay-400" />
 
-              {/* Per-repo charts — LOC focused */}
-              {data.companyContributions.primaryRepos.map((repo, idx) => {
-                const self = repo.contributors.find(c => c.isSelf);
-                const selfLOC = self?.additions || 0;
-                const totalLOC = repo.contributors.reduce((s, c) => s + c.additions, 0);
-                const selfPct = totalLOC > 0 ? ((selfLOC / totalLOC) * 100).toFixed(1) : "0";
-                const rankByLOC = [...repo.contributors].sort((a, b) => b.additions - a.additions).findIndex(c => c.isSelf) + 1;
-                return (
-                  <Card key={repo.name} className={`col-span-2 bento-card animate-slide-up delay-${(idx + 1) * 200}`}>
-                    <CardHeader className="pb-2 px-6 pt-6">
-                      <div className="flex items-center justify-between">
-                        <CardTitle className="text-base font-mono">{repo.name}</CardTitle>
-                        <div className="flex items-center gap-2">
-                          <Badge variant="default" className="text-[10px]">#{rankByLOC} by LOC</Badge>
-                          <Badge variant="secondary" className="text-[10px]">{selfPct}% of lines</Badge>
-                        </div>
-                      </div>
-                      <p className="text-xs text-muted-foreground mt-1">{repo.description}</p>
-                    </CardHeader>
-                    <CardContent className="px-6 pb-6">
-                      <ContributorChart
-                        contributors={repo.contributors}
-                        dataKey="additions"
-                        label="Lines of Code Added"
-                      />
-                    </CardContent>
-                  </Card>
-                );
-              })}
+              {/* Per-repo charts with LOC/Commits toggle */}
+              <RepoContribCards repos={data.companyContributions.primaryRepos} />
 
               {/* Other repos */}
               <Card className="col-span-2 bento-card animate-fade-in delay-500">
                 <CardHeader className="pb-2 px-6 pt-6">
-                  <CardTitle className="text-base">Other Evolphin Repos</CardTitle>
+                  <CardTitle className="text-base flex items-center gap-2"><Building2 className="h-4 w-4 text-[#a855f7]" />Other Evolphin Repos</CardTitle>
                   <p className="text-xs text-muted-foreground">Additional repositories with Sanjay&apos;s contributions</p>
                 </CardHeader>
                 <CardContent className="px-6 pb-6">
@@ -334,7 +335,8 @@ export default function ReportPage() {
           </section>
 
           {/* ── INVESTMENT SECTION ── */}
-          <section id="investment" className="col-span-full">
+          <SectionHeader id="investment" icon={Wallet} title="Personal Investment" subtitle="Self-funded AI tools and billing receipts" />
+          <section className="col-span-full">
             <Card className="bento-card animate-fade-in delay-200 bg-gradient-to-r from-[#a855f7]/6 via-background to-[#7c3aed]/4 border-[#a855f7]/15">
               <CardContent className="py-8 px-8">
                 <div className="grid md:grid-cols-4 gap-8 items-center">
@@ -352,7 +354,7 @@ export default function ReportPage() {
                     <Narrative>
                       <p>
                         Since joining Evolphin, I have invested approximately <span className="highlight-strong">&#x20B9;1,00,000 of my personal funds</span> on
-                        AI development tools. I used these tools for <span className="highlight">company work</span> because
+                        AI development tools. I used these tools for <span className="highlight">Evolphin work</span> because
                         I believed they made me more productive. I am <span className="highlight">not asking for reimbursement</span> &mdash;
                         I share this to provide the full picture.
                       </p>
@@ -389,82 +391,122 @@ export default function ReportPage() {
           </section>
 
           {/* ── PROJECTS SECTION ── */}
-          <section id="projects" className="col-span-full">
-            <div className="bento-grid">
-              {[
-                {
-                  name: "nonlu-skill",
-                  badge: "Shared with Team",
-                  badgeColor: "default" as const,
-                  desc: "AI skill/plugin framework for Claude Code and Cursor",
-                  learned: "Plugin architecture, prompt engineering, skill composition",
-                  sharing: "Already shared with the team to improve AI-assisted workflows.",
-                },
-                {
-                  name: "kilasroom",
-                  badge: "In Progress",
-                  badgeColor: "secondary" as const,
-                  desc: "Fork of open-source project — AI-powered interactive classroom",
-                  learned: "Monorepo setup, education UX, AI integration patterns",
-                  sharing: "Once completed, intended for team upskilling.",
-                },
-                {
-                  name: "nonlu",
-                  badge: "In Progress",
-                  badgeColor: "secondary" as const,
-                  desc: "AI-powered document sharing app — solving slow doc sharing at Evolphin",
-                  learned: "Multi-tenant SaaS, AI document processing",
-                  sharing: "Built to address a real workflow friction. Would have been shared once ready.",
-                },
-              ].map((p) => (
-                <Card key={p.name} className="col-span-1 bento-card animate-slide-up delay-300">
-                  <CardHeader className="pb-3 px-6 pt-6">
-                    <div className="flex items-center justify-between">
-                      <CardTitle className="text-base font-mono">{p.name}</CardTitle>
-                      <Badge variant={p.badgeColor} className="text-[10px]">{p.badge}</Badge>
+          <SectionHeader id="projects" icon={Lightbulb} title="Side Projects" subtitle="Upskilling projects and team-shared tools" />
+          <section className="col-span-full">
+            <Narrative>
+              <p>
+                <span className="highlight-strong">I learn by building.</span> These are upskilling projects, not commercial ventures.
+                I share what I build with the team &mdash; and <span className="highlight">bring the patterns back to my day job</span>.
+                I shared nonlu-skill with the team and would have shared kilasroom and nonlu once they were ready.
+              </p>
+            </Narrative>
+            <div className="bento-grid mt-6">
+              {/* nonlu-skill — wide card */}
+              <Card className="col-span-2 bento-card animate-slide-up delay-300 group hover:border-[#a855f7]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#a855f7]/5">
+                <CardContent className="p-6 flex flex-col h-full">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2.5 rounded-xl bg-[#a855f7]/10 text-[#a855f7]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="6" x2="6" y1="3" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg tracking-tight">nonlu-skill</h3>
+                        <p className="text-sm text-muted-foreground mt-0.5">AI skill/plugin framework for Claude Code and Cursor</p>
+                      </div>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-1">{p.desc}</p>
-                  </CardHeader>
-                  <CardContent className="space-y-3 px-6 pb-6">
-                    <div>
-                      <p className="text-xs text-muted-foreground uppercase tracking-widest mb-1">What I Learned</p>
-                      <p className="text-sm text-foreground/70">{p.learned}</p>
-                    </div>
-                    <div>
-                      <p className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Team Sharing</p>
-                      <p className="text-sm text-foreground/70">{p.sharing}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-
-              <Card className="col-span-1 bento-card animate-fade-in delay-400 flex items-center">
-                <CardContent className="py-6 px-6">
-                  <p className="text-base leading-relaxed text-foreground/70">
-                    <span className="highlight-strong">I learn by building.</span> These are upskilling projects, not commercial ventures.
-                    I share what I build with the team — and bring the patterns back to my day job.
-                  </p>
+                    <Badge variant="default" className="text-[10px] shrink-0 ml-2">Shared with Team</Badge>
+                  </div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {["Plugin architecture", "Prompt engineering", "Skill composition"].map((s) => (
+                      <span key={s} className="text-xs px-2.5 py-1 rounded-full bg-muted text-muted-foreground font-medium">{s}</span>
+                    ))}
+                  </div>
+                  <p className="text-sm text-foreground/70 mb-5 flex-1">Already shared with the team to improve AI-assisted development workflows.</p>
+                  <a href="https://github.com/luv-jeri/nonlu-skill" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-[#a855f7] hover:text-[#a855f7]/80 bg-[#a855f7]/10 hover:bg-[#a855f7]/20 px-5 py-2.5 rounded-lg transition-all duration-200 w-fit group/link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover/link:translate-x-0.5"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                    View on GitHub
+                  </a>
                 </CardContent>
               </Card>
+
+              {/* kilasroom — narrow card */}
+              <Card className="col-span-1 bento-card animate-slide-up delay-400 group hover:border-[#a855f7]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#a855f7]/5">
+                <CardContent className="p-6 flex flex-col h-full">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2.5 rounded-xl bg-[#a855f7]/10 text-[#a855f7]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-lg tracking-tight">kilasroom</h3>
+                      </div>
+                    </div>
+                    <Badge variant="secondary" className="text-[10px] shrink-0 ml-2">In Progress</Badge>
+                  </div>
+                  <p className="text-sm text-muted-foreground mb-3">AI-powered interactive classroom for learning</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {["Monorepo setup", "Education UX", "AI integration"].map((s) => (
+                      <span key={s} className="text-xs px-2.5 py-1 rounded-full bg-muted text-muted-foreground font-medium">{s}</span>
+                    ))}
+                  </div>
+                  <p className="text-sm text-foreground/70 mb-5 flex-1">Intended for team upskilling once completed.</p>
+                  <a href="https://open.maic.chat/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-[#a855f7] hover:text-[#a855f7]/80 bg-[#a855f7]/10 hover:bg-[#a855f7]/20 px-5 py-2.5 rounded-lg transition-all duration-200 w-fit group/link">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover/link:translate-x-0.5"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                    View Open MAIC
+                  </a>
+                </CardContent>
+              </Card>
+
+              {/* nonlu — full-width card */}
+              <Card className="col-span-full bento-card animate-slide-up delay-500 group hover:border-[#a855f7]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#a855f7]/5">
+                <CardContent className="p-6">
+                  <div className="flex flex-col md:flex-row md:items-center gap-6">
+                    <div className="flex items-center gap-3 shrink-0">
+                      <div className="p-2.5 rounded-xl bg-[#a855f7]/10 text-[#a855f7]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/></svg>
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-3">
+                          <h3 className="font-semibold text-lg tracking-tight">nonlu</h3>
+                          <Badge variant="secondary" className="text-[10px]">In Progress</Badge>
+                        </div>
+                        <p className="text-sm text-muted-foreground mt-0.5">AI-powered document sharing app — solving slow doc sharing at Evolphin</p>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {["Multi-tenant SaaS", "AI document processing"].map((s) => (
+                        <span key={s} className="text-xs px-2.5 py-1 rounded-full bg-muted text-muted-foreground font-medium">{s}</span>
+                      ))}
+                    </div>
+                    <p className="text-sm text-foreground/70 flex-1">Built to address a real workflow friction. Would have been shared once ready.</p>
+                    <a href="https://www.nonlu.xyz/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-[#a855f7] hover:text-[#a855f7]/80 bg-[#a855f7]/10 hover:bg-[#a855f7]/20 px-5 py-2.5 rounded-lg transition-all duration-200 w-fit shrink-0 group/link">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform group-hover/link:translate-x-0.5"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                      Visit nonlu.xyz
+                    </a>
+                  </div>
+                </CardContent>
+              </Card>
+
             </div>
           </section>
 
           {/* ── ACTIONS SECTION ── */}
-          <section id="actions" className="col-span-full">
+          <SectionHeader id="actions" icon={CheckCircle} title="Actions Taken" subtitle="Steps taken to address concerns" />
+          <section className="col-span-full">
             <Card className="bento-card animate-fade-in delay-200 border-[#a855f7]/20">
               <CardHeader className="pb-3 px-8 pt-6">
-                <CardTitle className="text-base">Immediate Actions Taken</CardTitle>
+                <CardTitle className="text-base flex items-center gap-2"><CheckCircle className="h-4 w-4 text-[#a855f7]" />Immediate Actions Taken</CardTitle>
               </CardHeader>
               <CardContent className="px-8 pb-8">
                 <div className="grid md:grid-cols-2 gap-5">
                   {[
-                    "I have removed the company Cursor account and stopped using it effective immediately.",
+                    "I have removed the Evolphin Cursor account and stopped using it effective immediately.",
                     "I recognize that my identical VS Code and Cursor themes may have caused occasional accidental usage on personal projects — this was not intentional.",
                     "I am actively working on improving my work schedule discipline to align with more conventional hours.",
                     "I remain fully committed to my work at Evolphin and to being transparent about my tool usage going forward.",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3 text-base">
-                      <span className="mt-2 h-2.5 w-2.5 rounded-full bg-[#a855f7] shrink-0" />
+                      <CheckCircle className="h-4 w-4 text-[#a855f7] shrink-0 mt-1" />
                       <span className="text-foreground/80">{item}</span>
                     </div>
                   ))}
@@ -474,7 +516,8 @@ export default function ReportPage() {
           </section>
 
           {/* ── DOWNLOADS SECTION ── */}
-          <section id="downloads" className="col-span-full">
+          <SectionHeader id="downloads" icon={Download} title="Download Raw Data" subtitle="Source files for independent verification" />
+          <section className="col-span-full">
             <Card className="bento-card animate-fade-in delay-200 bg-gradient-to-br from-[#a855f7]/6 via-background to-[#7c3aed]/4 border-[#a855f7]/15">
               <CardHeader className="pb-2 px-8 pt-6">
                 <div className="flex items-center gap-3">
@@ -583,16 +626,24 @@ export default function ReportPage() {
                 <div className="mt-8 pt-6 border-t border-border/30">
                   <p className="text-xs text-muted-foreground uppercase tracking-widest mb-3">Verify with AI</p>
                   <p className="text-sm text-muted-foreground mb-3">
-                    Download the data files above, then paste this prompt into any AI assistant (ChatGPT, Claude, Gemini) along with the CSV/JSON files:
+                    Download the data files above, then attach them to any AI assistant (ChatGPT, Claude, Gemini) with this prompt for an independent analysis:
                   </p>
-                  <div className="bg-card/80 border border-border/50 rounded-lg p-4 font-mono text-xs text-foreground/70 leading-relaxed">
-                    <p className="text-[#a855f7] mb-2 font-sans text-[10px] uppercase tracking-widest font-medium">Prompt to copy:</p>
-                    <p>I&apos;m sharing Cursor usage data (cursor-usage.csv), GitHub commit history (commits.csv), pull requests (prs.json), and company contribution stats (company-contributions.json). Please analyze this data and answer:</p>
-                    <p className="mt-2">1. What percentage of Cursor usage correlates with actual code commits?</p>
-                    <p>2. What are the peak working hours and do they match commit timestamps?</p>
-                    <p>3. How does the developer rank among team contributors by lines of code?</p>
-                    <p>4. Is there evidence of non-work usage during work hours?</p>
-                    <p>5. Provide a summary of productivity metrics with charts.</p>
+                  <div className="bg-card/80 border border-border/50 rounded-lg p-5 font-mono text-xs text-foreground/70 leading-relaxed">
+                    <p className="text-[#a855f7] mb-3 font-sans text-[10px] uppercase tracking-widest font-medium">Prompt to copy</p>
+                    <p>I&apos;m attaching 4 data files for an employee&apos;s Cursor AI tool usage and GitHub activity over the last 30 days. Please perform an independent, objective audit:</p>
+                    <p className="mt-3 font-sans text-[10px] text-[#a855f7] uppercase tracking-widest">Files attached:</p>
+                    <p>• cursor-usage.csv — Every Cursor AI request with timestamps, model, tokens, and cost</p>
+                    <p>• commits.csv — GitHub commits with timestamps, repo, and type (Company/Personal)</p>
+                    <p>• prs.json — Pull requests with status, repo, and dates</p>
+                    <p>• company-contributions.json — Lines of code per developer across company repos</p>
+                    <p className="mt-3 font-sans text-[10px] text-[#a855f7] uppercase tracking-widest">Analyze and answer:</p>
+                    <p>1. For each hour of the day, compare Cursor AI usage timestamps against commit timestamps. Are they correlated? Show a chart.</p>
+                    <p>2. What percentage of total Cursor usage occurred during hours that also have commits? Calculate the overlap.</p>
+                    <p>3. Break down commits by Company vs Personal. What is the ratio? Are personal commits during work hours or outside?</p>
+                    <p>4. From company-contributions.json, rank the developer (luv-jeri) against teammates by lines of code added. Show a comparison chart for each repo.</p>
+                    <p>5. What was the highest cost day? What was being built that day based on commit messages?</p>
+                    <p>6. Is there any evidence of the AI tool being used for non-work purposes during standard business hours?</p>
+                    <p>7. Generate a one-page executive summary with key metrics, charts, and your overall assessment of whether the tool usage aligns with productive work output.</p>
                   </div>
                 </div>
               </CardContent>

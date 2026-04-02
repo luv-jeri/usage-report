@@ -76,7 +76,7 @@ export function TabbedDetails({ commits, prs }: Props) {
                   variant={c.repoType === "Company" ? "default" : "secondary"}
                   className="text-[9px] px-1.5 py-0 shrink-0"
                 >
-                  {c.repoType === "Company" ? "Co" : "Per"}
+                  {c.repoType === "Company" ? "Evo" : "Per"}
                 </Badge>
                 <span className="truncate">{c.message}</span>
               </div>

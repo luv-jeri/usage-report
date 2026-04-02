@@ -78,7 +78,7 @@ export function HourlyChart({ cursorHourly, commitHourly }: Props) {
         />
         <Bar
           dataKey="companyCommits"
-          name="Company Commits"
+          name="Evolphin Commits"
           fill="url(#companyGrad)"
           radius={[4, 4, 0, 0]}
           animationDuration={1200}

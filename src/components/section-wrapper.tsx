@@ -1,22 +1,31 @@
-import { Separator } from "@/components/ui/separator";
+import type { LucideIcon } from "lucide-react";
 
 interface Props {
   children: React.ReactNode;
   title: string;
   subtitle?: string;
   delay?: string;
-  showSeparator?: boolean;
+  icon?: LucideIcon;
+  id?: string;
 }
 
-export function SectionWrapper({ children, title, subtitle, delay = "", showSeparator = true }: Props) {
+export function SectionWrapper({ children, title, subtitle, delay = "", icon: Icon, id }: Props) {
   return (
-    <>
-      {showSeparator && <Separator className="my-4" />}
-      <section className={`py-12 animate-fade-in ${delay}`}>
-        <h2 className="text-2xl font-bold tracking-tight mb-2">{title}</h2>
-        {subtitle && <p className="text-sm text-muted-foreground mb-6 max-w-3xl">{subtitle}</p>}
+    <section id={id} className={`col-span-full animate-fade-in ${delay}`}>
+      <div className="flex items-center gap-3 mb-1">
+        {Icon && (
+          <div className="p-2 rounded-lg bg-[#a855f7]/10">
+            <Icon className="h-5 w-5 text-[#a855f7]" />
+          </div>
+        )}
+        <div>
+          <h2 className="text-xl font-bold tracking-tight">{title}</h2>
+          {subtitle && <p className="text-sm text-muted-foreground mt-0.5">{subtitle}</p>}
+        </div>
+      </div>
+      <div className="mt-4">
         {children}
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

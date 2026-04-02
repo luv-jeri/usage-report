@@ -92,7 +92,7 @@ export function PeakCorrelation({ peakDate, cursorEvents, commits, prs }: Props)
                 <div key={i} className="flex items-start gap-3 text-sm py-1.5 px-2 rounded hover:bg-muted/50">
                   <span className="font-mono text-xs text-muted-foreground w-12 shrink-0">{c.time.slice(0, 5)}</span>
                   <Badge variant={c.repoType === "Company" ? "default" : "secondary"} className="text-[10px] shrink-0">
-                    {c.repoType === "Company" ? "Co" : "Per"}
+                    {c.repoType === "Company" ? "Evo" : "Per"}
                   </Badge>
                   <span className="text-xs truncate">{c.message}</span>
                 </div>
