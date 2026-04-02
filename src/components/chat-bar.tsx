@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
+import Markdown from "react-markdown";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ChevronDown, ChevronUp, Send, Sparkles, Loader2 } from "lucide-react";
@@ -176,13 +177,38 @@ export function ChatBar() {
                     className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
                   >
                     <div
-                      className={`max-w-[85%] rounded-xl px-3.5 py-2.5 text-sm leading-relaxed whitespace-pre-wrap ${
+                      className={`max-w-[85%] rounded-xl px-3.5 py-2.5 text-sm leading-relaxed ${
                         msg.role === "user"
-                          ? "bg-[#a855f7]/15 text-foreground border border-[#a855f7]/20"
+                          ? "bg-[#a855f7]/15 text-foreground border border-[#a855f7]/20 whitespace-pre-wrap"
                           : "bg-muted/50 text-foreground/90 border border-border/30"
                       }`}
                     >
-                      {msg.content || (
+                      {msg.content ? (
+                        msg.role === "user" ? (
+                          msg.content
+                        ) : (
+                          <Markdown
+                            components={{
+                              h1: ({ children }) => <h1 className="text-base font-bold mt-3 mb-1.5 first:mt-0">{children}</h1>,
+                              h2: ({ children }) => <h2 className="text-sm font-bold mt-3 mb-1.5 first:mt-0">{children}</h2>,
+                              h3: ({ children }) => <h3 className="text-sm font-semibold mt-2.5 mb-1 first:mt-0">{children}</h3>,
+                              p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+                              ul: ({ children }) => <ul className="list-disc pl-4 mb-2 space-y-0.5">{children}</ul>,
+                              ol: ({ children }) => <ol className="list-decimal pl-4 mb-2 space-y-0.5">{children}</ol>,
+                              li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+                              strong: ({ children }) => <strong className="font-semibold text-foreground">{children}</strong>,
+                              code: ({ children }) => <code className="bg-background/60 px-1 py-0.5 rounded text-xs font-mono">{children}</code>,
+                              table: ({ children }) => <div className="overflow-x-auto my-2"><table className="w-full text-xs border-collapse">{children}</table></div>,
+                              thead: ({ children }) => <thead className="border-b border-border/50">{children}</thead>,
+                              th: ({ children }) => <th className="text-left py-1.5 px-2 font-semibold text-foreground">{children}</th>,
+                              td: ({ children }) => <td className="py-1.5 px-2 border-b border-border/20">{children}</td>,
+                              hr: () => <hr className="border-border/30 my-2" />,
+                            }}
+                          >
+                            {msg.content}
+                          </Markdown>
+                        )
+                      ) : (
                         <span className="flex items-center gap-1.5 text-muted-foreground">
                           <Loader2 className="h-3 w-3 animate-spin" />
                           Thinking...
