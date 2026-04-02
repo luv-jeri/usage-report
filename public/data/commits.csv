@@ -1,0 +1,138 @@
+Date,Time_IST,Repo,Repo_Type,SHA,Commit_Message
+2026-04-01,18:36:44,Evolphin-Software/evolphin-x,Company,d4521d1,Merge pull request #124 from Evolphin-Software/fix/duplicate-detection-folder-scope
+2026-04-01,18:31:10,Evolphin-Software/evolphin-x,Company,9af4732,fix: duplicate detection scope and rename collision for folder uploads
+2026-04-01,01:16:47,luv-jeri/nonlu-skill,Personal,1dae99b,"docs: overhaul README with better structure, visuals, and pixel-first focus"
+2026-04-01,01:06:54,luv-jeri/nonlu-skill,Personal,92919a5,chore: update repo URL after rename to nonlu-skill
+2026-04-01,00:58:31,luv-jeri/nonlu-skill,Personal,6f53035,feat(pixel): add Figma-to-pixel-perfect UI skill
+2026-04-01,00:01:36,luv-jeri/nonlu-skill,Personal,a785060,feat(boost): add team collaboration features and overhaul README
+2026-03-31,23:44:36,luv-jeri/nonlu-skill,Personal,3ce110a,chore: add repository URL to package.json
+2026-03-31,23:41:36,luv-jeri/nonlu-skill,Personal,9b8d2cf,"feat(boost): add starter patterns, README, and contributor conventions"
+2026-03-31,23:41:07,luv-jeri/nonlu-skill,Personal,bf718ae,feat(boost): add evaluation framework — trigger tests and quality rubric
+2026-03-31,23:39:39,luv-jeri/nonlu-skill,Personal,680476f,feat(boost): add enhanced templates with before/after examples and anti-patterns
+2026-03-31,23:39:16,luv-jeri/nonlu-skill,Personal,60fe222,feat(boost): add 7 complete before/after transformation examples
+2026-03-31,23:39:09,luv-jeri/nonlu-skill,Personal,df02007,feat(boost): add enhanced context discovery with edge cases and secrets avoidance
+2026-03-31,23:37:44,luv-jeri/nonlu-skill,Personal,6306b0b,feat(boost): add complete 9-step flow with flowchart and edge cases
+2026-03-31,23:37:40,luv-jeri/nonlu-skill,Personal,488ddbe,feat(boost): add prompt passthrough detection for already-structured prompts
+2026-03-31,23:37:32,luv-jeri/nonlu-skill,Personal,a65738d,"feat(boost): add iron laws, rationalization prevention, and DO NOTs"
+2026-03-31,23:36:21,luv-jeri/nonlu-skill,Personal,2cc430b,feat(boost): add lean trigger-only SKILL.md
+2026-03-31,23:36:18,luv-jeri/nonlu-skill,Personal,a9cd79a,"feat: add package metadata, MIT license, and marketplace listing"
+2026-03-31,23:35:48,luv-jeri/nonlu-skill,Personal,637b258,"chore: remove v1 skill files, create v2 directory structure"
+2026-03-31,23:35:32,luv-jeri/nonlu-skill,Personal,38c9dae,docs: add boost v2 premium implementation plan (15 tasks)
+2026-03-31,23:29:18,luv-jeri/nonlu-skill,Personal,0814df4,docs: add boost v2 premium plugin design spec
+2026-03-31,23:01:48,luv-jeri/nonlu-skill,Personal,4593c3c,fix(boost): add missing tie-breaking rationale to Cursor SKILL.md for consistency
+2026-03-31,23:00:05,luv-jeri/nonlu-skill,Personal,5496ab1,feat(boost): add Cursor skill with SKILL.md and shared reference files
+2026-03-31,22:59:14,luv-jeri/nonlu-skill,Personal,dd154a4,feat(boost): add core SKILL.md with full prompt enhancement flow
+2026-03-31,22:58:59,luv-jeri/nonlu-skill,Personal,92efd03,feat(boost): add starter boost-patterns.md for team-shared conventions
+2026-03-31,22:58:38,luv-jeri/nonlu-skill,Personal,0618f69,feat(boost): add Cursor MDC trigger rule for /boost invocation
+2026-03-31,22:57:13,luv-jeri/nonlu-skill,Personal,546b9b6,feat(boost): add 7 structured task templates for prompt enhancement
+2026-03-31,22:57:09,luv-jeri/nonlu-skill,Personal,f70dfa7,feat(boost): add context discovery rules with priority-based resolution
+2026-03-31,19:55:00,Evolphin-Software/project-x-connector,Company,ab77cdc,Merge pull request #20 from Evolphin-Software/fix/download-progress-endpoint-post-method
+2026-03-31,19:53:29,luv-jeri/nonlu-skill,Personal,f623b51,docs: add boost skill spec and implementation plan
+2026-03-31,19:53:24,luv-jeri/nonlu-skill,Personal,9d23f6f,chore: initial repo setup with .gitignore
+2026-03-31,18:00:22,Evolphin-Software/evolphin-x,Company,a2edc75,Merge pull request #121 from Evolphin-Software/feat/share-asset
+2026-03-31,17:56:52,Evolphin-Software/evolphin-x,Company,58969df,"merge: resolve conflicts with meraki, keep both share and download features"
+2026-03-31,17:47:53,Evolphin-Software/project-x-connector,Company,670bcb0,fix:Change HTTP method for progress endpoint from GET to POST in DownloadResource class
+2026-03-31,17:43:57,Evolphin-Software/evolphin-x,Company,215460c,Merge pull request #123 from Evolphin-Software/fix/duplicate-detection-overflow
+2026-03-31,17:41:38,Evolphin-Software/evolphin-x,Company,2c13665,fix: duplicate detection UI overflow and skip-all progress bug
+2026-03-31,16:26:33,Evolphin-Software/evolphin-x,Company,2fe48cb,refactor(ui): update ShareAssetDialog styling and structure
+2026-03-31,15:51:11,Evolphin-Software/evolphin-x,Company,7625db3,fix: use nullable instead of optional in share response schema
+2026-03-31,15:19:50,Evolphin-Software/native-connector-evo-x,Company,e6ec1f8,Merge pull request #3 from Evolphin-Software/feat/download-asset-v2
+2026-03-31,15:07:32,Evolphin-Software/native-connector-evo-x,Company,5e4eda4,feat: add staging subdomains to CORS allowlist
+2026-03-31,14:35:49,Evolphin-Software/evolphin-x,Company,855eacc,Merge pull request #119 from Evolphin-Software/feat/download-asset-v2
+2026-03-31,14:34:19,Evolphin-Software/evolphin-x,Company,8531fcc,fix: add download handler to grid view asset card
+2026-03-31,14:28:34,Evolphin-Software/evolphin-x,Company,b40b1b6,fix: restore download feature wiring removed by meraki revert
+2026-03-31,14:23:39,Evolphin-Software/evolphin-x,Company,7045dc5,"merge: resolve conflicts with meraki, restore download feature"
+2026-03-31,13:24:38,Evolphin-Software/evolphin-ui-library,Company,b8c7173,docs: remove AI Playground link from site header
+2026-03-31,13:22:25,Evolphin-Software/evolphin-ui-library,Company,93c34ff,chore: make lint scripts explicit in package.json
+2026-03-31,13:21:25,Evolphin-Software/evolphin-ui-library,Company,9b0abea,chore: update dependencies and align Recharts 3 chart types
+2026-03-31,12:58:16,Evolphin-Software/evolphin-x,Company,dee4e41,fix: switch download progress polling to POST method
+2026-03-31,04:47:07,Evolphin-Software/evolphin-x,Company,e4e1e9b,feat(ui): add share asset feature with presigned URL generation
+2026-03-31,04:34:57,Evolphin-Software/evolphin-x,Company,b095f01,docs: add share asset feature design spec
+2026-03-31,04:08:51,Evolphin-Software/evolphin-x,Company,58215b4,fix: add missing FolderResolveCandidate types and schema
+2026-03-31,03:11:54,Evolphin-Software/evolphin-x,Company,347ee0c,fix: download progress polling not working in browser
+2026-03-31,01:49:58,Evolphin-Software/evolphin-x,Company,b0a1c25,Merge pull request #117 from Evolphin-Software/feat/skip-metadata-no-mandatory-fields
+2026-03-31,00:18:07,Evolphin-Software/evolphin-x,Company,55b7332,feat(upload): skip metadata step when no mandatory fields exist
+2026-03-30,12:09:11,Evolphin-Software/evolphin-x,Company,6615287,feat(upload): add schema-driven metadata form to upload flow
+2026-03-30,03:17:00,Evolphin-Software/evolphin-x,Company,7002c8a,fix: align download progress schema with server response format
+2026-03-29,21:43:28,Evolphin-Software/native-connector-evo-x,Company,034b330,feat: add GET /downloads-path endpoint
+2026-03-29,21:35:44,Evolphin-Software/evolphin-x,Company,262c1d2,feat(ui): add download asset feature with progress tracking
+2026-03-27,18:20:17,Evolphin-Software/evolphin-x,Company,f9706bc,Merge pull request #100 from Evolphin-Software/feat/runtime-config-ssm
+2026-03-26,14:03:04,Evolphin-Software/evolphin-x,Company,5496c83,docs: add runtime config architecture reference
+2026-03-26,13:52:17,Evolphin-Software/evolphin-x,Company,88231ba,fix: harden ConfigProvider and updateRuntimeConfig
+2026-03-26,13:46:33,Evolphin-Software/evolphin-x,Company,f7f034b,feat: replace NEXT_PUBLIC env vars with runtime config via SSM
+2026-03-24,15:49:43,Evolphin-Software/evolphin-x,Company,2555ba8,feat: add NOT operator support to metadata filter dropdown
+2026-03-24,15:45:56,Evolphin-Software/evolphin-x,Company,08217d4,merge: resolve conflict with meraki (keep both savedAdvancedSearch and clearSearchText)
+2026-03-24,15:43:42,Evolphin-Software/evolphin-x,Company,9fc6a2d,refactor: remove AND operator from metadata filter dropdown
+2026-03-24,15:32:21,Evolphin-Software/evolphin-x,Company,2f6b256,feat: separate global search and advanced search into independent flows
+2026-03-23,20:10:47,Evolphin-Software/evolphin-x,Company,a842f28,fix: address PR review comments
+2026-03-23,19:31:36,Evolphin-Software/evolphin-x,Company,bd1094d,feat: wire advanced search filters (general + metadata) to search API
+2026-03-22,19:47:24,Evolphin-Software/evolphin-x,Company,a3ff921,Skip file-review step — upload directly from file preview
+2026-03-22,19:42:07,Evolphin-Software/evolphin-x,Company,859e933,Skip metadata step in upload flow for investor demo
+2026-03-22,18:38:46,Evolphin-Software/evolphin-x,Company,a5060dc,fix(fetcher): parse error response body in external fetcher for better debugging
+2026-03-22,17:59:52,Evolphin-Software/evolphin-x,Company,d16dff1,"fix(metadata-panel): resolve stale data, broken export, and missing state in side panel"
+2026-03-20,20:47:20,luv-jeri/kilasroom,Personal,21be8b0,"docs: add designer brief, auth spec, and auth implementation plan"
+2026-03-20,19:22:31,Evolphin-Software/evolphin-x,Company,731db2c,Merge pull request #85 from Evolphin-Software/feat/optional-metadata-upload
+2026-03-20,19:18:39,Evolphin-Software/evolphin-x,Company,1ad84b5,refactor(upload): simplify upload metadata footer and form
+2026-03-20,14:51:47,Evolphin-Software/evolphin-x,Company,ea862d2,fix(auth): relax login userId validation to non-empty string
+2026-03-20,14:47:38,Evolphin-Software/evolphin-x,Company,a536923,feat(ui): redesign login page with new branding and assets
+2026-03-20,11:36:52,luv-jeri/kilasroom,Personal,2bfe9a3,"feat: scaffold Nonlu Learn monorepo with backend, frontend, and testing infrastructure"
+2026-03-18,19:39:27,luv-jeri/nonlu,Personal,1e30bdf,chore: add bun.lock files and update .gitignore
+2026-03-18,19:36:01,luv-jeri/nonlu,Personal,76796c3,feat: initial commit — nonlu-teams multi-tenant SaaS platform
+2026-03-18,12:13:38,Evolphin-Software/evolphin-x,Company,3ea60a0,fix: refine upload modal mobile responsiveness
+2026-03-17,20:05:28,Evolphin-Software/evolphin-x,Company,78f1860,feat: make Upload Modal responsive for mobile viewports
+2026-03-13,18:05:06,Evolphin-Software/evolphin-x,Company,489ebac,Merge pull request #69 from Evolphin-Software/feat/folder-fixes-and-breadcrumbs
+2026-03-13,16:34:56,Evolphin-Software/evolphin-x,Company,b978d93,feat: add folder breadcrumb navigation to assets header
+2026-03-13,16:34:55,Evolphin-Software/evolphin-x,Company,392b46b,fix: correct folder display in asset views
+2026-03-13,15:46:31,Evolphin-Software/evolphin-x,Company,89a6232,Merge pull request #68 from Evolphin-Software/feat/migrate-shadcn-sonner-toast
+2026-03-13,15:43:57,Evolphin-Software/evolphin-x,Company,bc05822,feat: migrate toast notifications to shadcn/ui Sonner wrapper
+2026-03-13,15:25:57,Evolphin-Software/evolphin-x,Company,dc64740,feat(upload): replace hardcoded destination with first folder from list API
+2026-03-13,15:16:58,Evolphin-Software/evolphin-x,Company,5022c79,feat: use real userId from auth/verify for upload author and sidebar
+2026-03-13,15:05:18,Evolphin-Software/evolphin-x,Company,8da97ed,Merge pull request #67 from Evolphin-Software/fix/upload-spinner-timing
+2026-03-13,15:03:44,Evolphin-Software/evolphin-x,Company,691cf5d,fix(upload): show spinner until asset IDs arrive from upload API
+2026-03-13,14:52:00,Evolphin-Software/evolphin-x,Company,8b2ce53,Merge pull request #66 from Evolphin-Software/feat/new-ui-duplicate-detection
+2026-03-13,14:51:07,Evolphin-Software/evolphin-x,Company,06f4743,refactor(upload): simplify duplicate detection UI with server-suggested names
+2026-03-13,14:32:28,Evolphin-Software/evolphin-x,Company,637393c,Merge pull request #58 from Evolphin-Software/feat/duplicate-detection-api
+2026-03-13,11:50:21,Evolphin-Software/evolphin-x,Company,6a44a61,fix: add missing react-day-picker to lockfile
+2026-03-12,20:52:01,Evolphin-Software/evolphin-x,Company,035ebc5,Merge branch 'feat/duplicate-detection-api' of https://github.com/Evolphin-Software/evolphin-x into feat/duplicate-detec
+2026-03-12,20:51:22,Evolphin-Software/evolphin-x,Company,7b9b5b7,feat(upload): add upload progress status and response schemas
+2026-03-12,20:15:36,Evolphin-Software/evolphin-x,Company,d31fd64,"feat(upload): add replace action, rename map, and upload progress polling"
+2026-03-12,20:15:19,Evolphin-Software/evolphin-x,Company,cdc34e6,refactor(upload): remove mock duplicate detection code
+2026-03-12,20:14:22,Evolphin-Software/evolphin-x,Company,e7013cc,feat(upload): integrate real duplicate detection API
+2026-03-12,19:36:53,Evolphin-Software/evolphin-x,Company,5d09a6f,"feat(upload): add replace action, rename map, and upload progress polling"
+2026-03-12,15:51:52,Evolphin-Software/evolphin-x,Company,b4a7365,Merge pull request #62 from Evolphin-Software/fix/upload-modal-dropzone-reset
+2026-03-12,15:44:38,Evolphin-Software/evolphin-x,Company,f2d8d81,Merge pull request #63 from Evolphin-Software/feat/upload-dropzone-redesign
+2026-03-12,15:42:18,Evolphin-Software/evolphin-x,Company,7e1895b,feat(upload): redesign dropzone UI with inline file/folder pickers
+2026-03-12,15:12:10,Evolphin-Software/evolphin-x,Company,0d87467,fix(upload): reset to dropzone when all files are removed
+2026-03-12,14:43:13,Evolphin-Software/evolphin-x,Company,8ca230d,Merge pull request #61 from Evolphin-Software/fix/upload-progress-status-enum
+2026-03-12,14:41:56,Evolphin-Software/evolphin-x,Company,8176840,fix(upload): align Zod status enum with Java backend response
+2026-03-12,12:20:16,Evolphin-Software/evolphin-x,Company,52fdb22,Merge pull request #60 from Evolphin-Software/fix/qa-bug-fixes
+2026-03-12,12:15:38,Evolphin-Software/evolphin-x,Company,b9781a2,fix: resolve multiple QA-reported UI bugs
+2026-03-12,12:13:00,Evolphin-Software/evolphin-x,Company,e1fe5d8,Merge pull request #59 from Evolphin-Software/feat/nested-folder-upload-ui
+2026-03-12,12:12:14,Evolphin-Software/evolphin-x,Company,2d8012e,Merge pull request #57 from Evolphin-Software/feat/upload-progress-polling
+2026-03-12,11:38:46,Evolphin-Software/native-connector-evo-x,Company,98d9510,Merge pull request #2 from Evolphin-Software/fix/mdfind-special-chars
+2026-03-12,11:37:11,Evolphin-Software/evolphin-x,Company,ec95d5c,fix(upload): handle empty asset IDs and make schema fields optional
+2026-03-12,10:58:50,Evolphin-Software/native-connector-evo-x,Company,94f4189,fix(mac): use kMDItemFSName query to resolve files with special characters
+2026-03-12,10:57:44,Evolphin-Software/evolphin-x,Company,3e5efb0,feat(upload): show nested subfolder tree in upload modal
+2026-03-10,16:34:21,Evolphin-Software/evolphin-x,Company,5f88d3a,refactor(upload): remove mock duplicate detection code
+2026-03-10,16:29:16,Evolphin-Software/evolphin-x,Company,24197e7,feat(upload): integrate real duplicate detection API
+2026-03-10,15:30:51,Evolphin-Software/evolphin-x,Company,e7edb7f,chore(upload): reduce progress polling interval to 500ms
+2026-03-10,15:25:35,Evolphin-Software/evolphin-x,Company,3016407,fix(upload): align progress polling with backend contract
+2026-03-10,15:23:20,Evolphin-Software/evolphin-x,Company,423b48d,feat(upload): add per-file upload progress polling
+2026-03-10,14:20:27,Evolphin-Software/evolphin-x,Company,9947e3e,fix: add request batching for large file selections
+2026-03-10,14:20:25,Evolphin-Software/native-connector-evo-x,Company,3d7f5a6,fix: raise payload limits to support large file selections
+2026-03-10,14:02:51,Evolphin-Software/native-connector-evo-x,Company,d83dbbc,chore: bump version to 1.1.0
+2026-03-10,14:01:14,Evolphin-Software/evolphin-x,Company,d9bf2d3,Merge pull request #56 from Evolphin-Software/feat/folder-path-resolution
+2026-03-10,14:00:08,Evolphin-Software/native-connector-evo-x,Company,66869ff,feat: add folder path resolution support
+2026-03-10,13:59:50,Evolphin-Software/evolphin-x,Company,12bdc1c,feat(upload): add folder path resolution and fix dropzone flow
+2026-03-08,11:23:00,Evolphin-Software/evolphin-x,Company,cba3a57,Merge pull request #55 from Evolphin-Software/feat/ZMX-264
+2026-03-05,16:35:26,Evolphin-Software/evolphin-x,Company,1740d4a,feat: revamp search results table columns and add sorting
+2026-03-05,16:35:25,Evolphin-Software/evolphin-x,Company,2ec893c,fix: advanced search accessibility and revisions input
+2026-03-05,15:02:14,Evolphin-Software/evolphin-x,Company,8ae4be1,Merge pull request #54 from Evolphin-Software/refactor/ZMX-257
+2026-03-03,12:00:04,Evolphin-Software/evolphin-x,Company,80209ab,Merge pull request #51 from Evolphin-Software/refactor/ZMX-257
+2026-03-03,11:42:49,Evolphin-Software/evolphin-x,Company,106dbab,Merge pull request #50 from Evolphin-Software/cleanup/remove-unused-api-endpoints
+2026-03-03,11:39:54,Evolphin-Software/evolphin-x,Company,5ecc1c9,cleanup: remove dead auth guard code from middleware
+2026-03-03,11:35:04,Evolphin-Software/evolphin-x,Company,314f1e2,cleanup: remove duplicate `server` endpoint and dead `fetchFromServer`
+2026-03-03,11:23:47,Evolphin-Software/evolphin-x,Company,026e980,fix: update API_ENDPOINTS to use consistent base URLs for projectX and previewX
+2026-03-03,10:48:23,Evolphin-Software/evolphin-x,Company,843b45c,cleanup: remove unused API endpoints and dead code
+2026-03-03,10:23:47,Evolphin-Software/evolphin-x,Company,06b6c71,Merge pull request #49 from Evolphin-Software/refactor/centralize-api-endpoints
+2026-03-03,10:17:05,Evolphin-Software/evolphin-x,Company,ca11459,refactor: centralize all API endpoint URLs into config.ts

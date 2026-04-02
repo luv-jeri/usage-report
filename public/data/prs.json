@@ -1,0 +1,442 @@
+[
+  {
+    "closedAt": "0001-01-01T00:00:00Z",
+    "createdAt": "2026-04-02T06:34:43Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "open",
+    "title": "feat: Asset Preview Page v1",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/128"
+  },
+  {
+    "closedAt": "0001-01-01T00:00:00Z",
+    "createdAt": "2026-04-01T20:51:25Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "open",
+    "title": "feat: Asset Preview Page \u2014 full-page viewer with video player, image editor, clipper, and side panel",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/127"
+  },
+  {
+    "closedAt": "2026-04-01T20:50:46Z",
+    "createdAt": "2026-04-01T20:49:27Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "closed",
+    "title": "feat: Add video clipper component to asset preview page",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/126"
+  },
+  {
+    "closedAt": "2026-04-01T13:06:45Z",
+    "createdAt": "2026-04-01T13:01:31Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "fix: duplicate detection scope and rename collision for folder uploads",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/124"
+  },
+  {
+    "closedAt": "2026-03-31T14:25:00Z",
+    "createdAt": "2026-03-31T12:19:55Z",
+    "repository": {
+      "name": "project-x-connector",
+      "nameWithOwner": "Evolphin-Software/project-x-connector"
+    },
+    "state": "merged",
+    "title": "fix: use POST for download progress endpoint",
+    "url": "https://github.com/Evolphin-Software/project-x-connector/pull/20"
+  },
+  {
+    "closedAt": "2026-03-31T12:13:58Z",
+    "createdAt": "2026-03-31T12:12:09Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "fix: duplicate detection UI overflow and skip-all progress bug",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/123"
+  },
+  {
+    "closedAt": "2026-03-31T12:30:22Z",
+    "createdAt": "2026-03-30T23:17:36Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "feat(ui): add share asset feature with presigned URL generation",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/121"
+  },
+  {
+    "closedAt": "0001-01-01T00:00:00Z",
+    "createdAt": "2026-03-30T21:42:29Z",
+    "repository": {
+      "name": "project-x-connector",
+      "nameWithOwner": "Evolphin-Software/project-x-connector"
+    },
+    "state": "open",
+    "title": "fix: download progress endpoint to use query params",
+    "url": "https://github.com/Evolphin-Software/project-x-connector/pull/19"
+  },
+  {
+    "closedAt": "2026-03-31T09:05:49Z",
+    "createdAt": "2026-03-30T21:42:26Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "fix: download progress polling not working",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/119"
+  },
+  {
+    "closedAt": "2026-03-30T20:19:58Z",
+    "createdAt": "2026-03-30T19:04:36Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "feat(upload): skip metadata step when no mandatory fields",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/117"
+  },
+  {
+    "closedAt": "2026-03-30T13:22:40Z",
+    "createdAt": "2026-03-30T06:47:15Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "feat(upload): add schema-driven metadata form to upload flow",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/109"
+  },
+  {
+    "closedAt": "2026-03-31T09:49:51Z",
+    "createdAt": "2026-03-29T16:28:56Z",
+    "repository": {
+      "name": "native-connector-evo-x",
+      "nameWithOwner": "Evolphin-Software/native-connector-evo-x"
+    },
+    "state": "merged",
+    "title": "feat: Add GET /downloads-path endpoint",
+    "url": "https://github.com/Evolphin-Software/native-connector-evo-x/pull/3"
+  },
+  {
+    "closedAt": "2026-03-30T13:20:52Z",
+    "createdAt": "2026-03-29T16:24:55Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "feat: Add download asset feature with progress tracking",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/107"
+  },
+  {
+    "closedAt": "2026-03-27T12:50:17Z",
+    "createdAt": "2026-03-26T08:11:18Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "feat: runtime config via SSM Parameter Store",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/100"
+  },
+  {
+    "closedAt": "2026-03-24T10:20:27Z",
+    "createdAt": "2026-03-24T10:02:47Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "feat: separate global search and advanced search into independent flows",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/96"
+  },
+  {
+    "closedAt": "2026-03-23T14:47:46Z",
+    "createdAt": "2026-03-23T14:02:47Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "feat: Wire advanced search filters (general + metadata) to search API",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/93"
+  },
+  {
+    "closedAt": "2026-03-22T14:33:39Z",
+    "createdAt": "2026-03-22T12:30:20Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "fix(metadata-panel): resolve stale data, broken export, and missing state in side panel",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/88"
+  },
+  {
+    "closedAt": "2026-03-20T13:52:32Z",
+    "createdAt": "2026-03-20T13:49:29Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "Make upload metadata fields optional",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/85"
+  },
+  {
+    "closedAt": "2026-03-20T11:32:06Z",
+    "createdAt": "2026-03-20T09:19:01Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "feat(ui): redesign login page with new branding and assets",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/80"
+  },
+  {
+    "closedAt": "0001-01-01T00:00:00Z",
+    "createdAt": "2026-03-18T11:28:06Z",
+    "repository": {
+      "name": "pico-shopify-plugin",
+      "nameWithOwner": "Evolphin-Software/pico-shopify-plugin"
+    },
+    "state": "open",
+    "title": "feat: add Cursor IDE configuration for team development",
+    "url": "https://github.com/Evolphin-Software/pico-shopify-plugin/pull/47"
+  },
+  {
+    "closedAt": "2026-03-19T05:46:36Z",
+    "createdAt": "2026-03-17T14:35:58Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "feat: make Upload Modal responsive for mobile viewports",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/75"
+  },
+  {
+    "closedAt": "2026-03-13T12:35:07Z",
+    "createdAt": "2026-03-13T11:05:25Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "feat: folder display fixes and breadcrumb navigation",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/69"
+  },
+  {
+    "closedAt": "2026-03-13T10:16:32Z",
+    "createdAt": "2026-03-13T10:14:16Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "feat: migrate toast notifications to shadcn/ui Sonner wrapper",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/68"
+  },
+  {
+    "closedAt": "2026-03-13T09:35:18Z",
+    "createdAt": "2026-03-13T09:34:01Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "fix(upload): show spinner until asset IDs arrive from upload API",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/67"
+  },
+  {
+    "closedAt": "2026-03-13T09:22:00Z",
+    "createdAt": "2026-03-13T09:21:45Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "refactor(upload): new ui for duplicate detection ",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/66"
+  },
+  {
+    "closedAt": "2026-03-13T06:22:50Z",
+    "createdAt": "2026-03-13T06:20:34Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "fix: add missing react-day-picker to lockfile",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/65"
+  },
+  {
+    "closedAt": "2026-03-17T07:32:00Z",
+    "createdAt": "2026-03-12T13:13:35Z",
+    "repository": {
+      "name": "evolphin-project-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-project-x"
+    },
+    "state": "closed",
+    "title": "fix: expose actual exception in duplicate detection error response",
+    "url": "https://github.com/Evolphin-Software/evolphin-project-x/pull/79"
+  },
+  {
+    "closedAt": "2026-03-12T10:14:38Z",
+    "createdAt": "2026-03-12T10:12:38Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "feat(upload): redesign dropzone UI with inline file/folder pickers",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/63"
+  },
+  {
+    "closedAt": "2026-03-12T10:21:52Z",
+    "createdAt": "2026-03-12T09:42:29Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "fix(upload): reset to dropzone when all files are removed",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/62"
+  },
+  {
+    "closedAt": "2026-03-12T09:13:13Z",
+    "createdAt": "2026-03-12T09:12:14Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "fix(upload): align Zod status enum with Java backend response",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/61"
+  },
+  {
+    "closedAt": "2026-03-12T06:50:16Z",
+    "createdAt": "2026-03-12T06:32:49Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "fix: resolve multiple QA-reported UI bugs",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/60"
+  },
+  {
+    "closedAt": "2026-03-12T06:08:47Z",
+    "createdAt": "2026-03-12T05:29:06Z",
+    "repository": {
+      "name": "native-connector-evo-x",
+      "nameWithOwner": "Evolphin-Software/native-connector-evo-x"
+    },
+    "state": "merged",
+    "title": "fix(mac): use kMDItemFSName query to resolve files with special characters",
+    "url": "https://github.com/Evolphin-Software/native-connector-evo-x/pull/2"
+  },
+  {
+    "closedAt": "2026-03-12T06:43:00Z",
+    "createdAt": "2026-03-12T05:28:02Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "feat(upload): show nested subfolder tree in upload modal",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/59"
+  },
+  {
+    "closedAt": "2026-03-13T09:02:28Z",
+    "createdAt": "2026-03-10T11:04:57Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "feat(upload): integrate real duplicate detection API",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/58"
+  },
+  {
+    "closedAt": "2026-03-12T08:58:34Z",
+    "createdAt": "2026-03-10T10:28:42Z",
+    "repository": {
+      "name": "project-x-connector",
+      "nameWithOwner": "Evolphin-Software/project-x-connector"
+    },
+    "state": "closed",
+    "title": "Add renameMap to upload request for duplicate resolution",
+    "url": "https://github.com/Evolphin-Software/project-x-connector/pull/8"
+  },
+  {
+    "closedAt": "2026-03-12T06:42:14Z",
+    "createdAt": "2026-03-10T09:53:44Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "feat(upload): add per-file upload progress polling",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/57"
+  },
+  {
+    "closedAt": "0001-01-01T00:00:00Z",
+    "createdAt": "2026-03-10T09:32:58Z",
+    "repository": {
+      "name": "project-x-connector",
+      "nameWithOwner": "Evolphin-Software/project-x-connector"
+    },
+    "state": "open",
+    "title": "Add file resolver endpoint \u2014 Java translation of native connector logic",
+    "url": "https://github.com/Evolphin-Software/project-x-connector/pull/7"
+  },
+  {
+    "closedAt": "2026-03-10T08:31:15Z",
+    "createdAt": "2026-03-10T08:27:00Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "feat(upload): add folder path resolution and fix dropzone flow",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/56"
+  },
+  {
+    "closedAt": "2026-03-03T06:12:49Z",
+    "createdAt": "2026-03-03T05:54:15Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "cleanup: remove unused API endpoints and dead code",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/50"
+  },
+  {
+    "closedAt": "2026-03-03T04:53:47Z",
+    "createdAt": "2026-03-03T04:51:45Z",
+    "repository": {
+      "name": "evolphin-x",
+      "nameWithOwner": "Evolphin-Software/evolphin-x"
+    },
+    "state": "merged",
+    "title": "refactor: centralize all API endpoint URLs into config.ts",
+    "url": "https://github.com/Evolphin-Software/evolphin-x/pull/49"
+  }
+]

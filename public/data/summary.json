@@ -1,0 +1,54 @@
+{
+  "total_commits": 137,
+  "repos": {
+    "Evolphin-Software/evolphin-x": {
+      "count": 61,
+      "type": "Company"
+    },
+    "luv-jeri/nonlu-skill": {
+      "count": 27,
+      "type": "Personal"
+    },
+    "Evolphin-Software/project-x-connector": {
+      "count": 2,
+      "type": "Company"
+    },
+    "Evolphin-Software/native-connector-evo-x": {
+      "count": 3,
+      "type": "Company"
+    },
+    "Evolphin-Software/evolphin-ui-library": {
+      "count": 3,
+      "type": "Company"
+    },
+    "luv-jeri/kilasroom": {
+      "count": 2,
+      "type": "Personal"
+    },
+    "luv-jeri/nonlu": {
+      "count": 2,
+      "type": "Personal"
+    }
+  },
+  "company_commits": 69,
+  "personal_commits": 31,
+  "commit_hours_ist": {
+    "18": 6,
+    "01": 3,
+    "00": 3,
+    "23": 16,
+    "22": 5,
+    "19": 11,
+    "17": 5,
+    "16": 3,
+    "15": 13,
+    "14": 10,
+    "13": 5,
+    "12": 3,
+    "04": 3,
+    "03": 2,
+    "21": 2,
+    "20": 8,
+    "11": 2
+  }
+}
