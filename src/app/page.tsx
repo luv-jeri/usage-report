@@ -75,9 +75,9 @@ export default function ReportPage() {
         {/* ═══ HERO ═══ */}
         <section id="hero">
           <Card className="bento-card animate-fade-in bg-gradient-to-br from-[#a855f7]/8 via-background to-[#7c3aed]/5 border-[#a855f7]/15 mb-6">
-            <CardContent className="py-10 px-8 md:px-10">
+            <CardContent className="py-6 px-5 md:py-10 md:px-10">
               <Badge variant="secondary" className="mb-4 text-xs tracking-wider">Confidential Report</Badge>
-              <h1 className="text-3xl md:text-5xl font-bold tracking-tight mb-2">
+              <h1 className="text-xl sm:text-3xl md:text-5xl font-bold tracking-tight mb-2">
                 Cursor Usage &amp; Work Activity Report
               </h1>
               <p className="text-muted-foreground text-base mb-4">
@@ -89,11 +89,11 @@ export default function ReportPage() {
                 <span className="highlight"> requested billing details</span> for the highest token consumption day,
                 along with additional context about my contributions and working patterns.
               </p>
-              <div className="flex items-center gap-6 mt-6">
+              <div className="flex flex-wrap items-center gap-3 md:gap-6 mt-6">
                 <p className="text-xs text-muted-foreground">
                   Generated on {new Date().toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}
                 </p>
-                <Separator orientation="vertical" className="h-4" />
+                <Separator orientation="vertical" className="h-4 hidden md:block" />
                 <div className="flex items-center gap-3 text-xs text-muted-foreground">
                   <span className="flex items-center gap-1.5"><span className="inline-flex items-center gap-1 bg-primary text-primary-foreground px-1.5 py-0 rounded-sm text-[8px]"><img src="/logos/evolphin-icon.svg" alt="" className="h-3 w-3" />Evo</span> = Evolphin</span>
                   <span className="flex items-center gap-1.5"><Badge variant="secondary" className="text-[8px] px-1.5 py-0">Per</Badge> = Personal</span>
@@ -119,7 +119,7 @@ export default function ReportPage() {
 
           {/* ── Peak Day: What was built + Chart ── */}
           <SectionHeader id="peak-day" icon={Flame} title="Peak Day Analysis" subtitle="What was built on the highest usage day" />
-          <section className="col-span-2">
+          <section className="col-span-full lg:col-span-2">
             <Card className="bento-card animate-fade-in delay-300 h-full">
               <CardHeader className="pb-3 px-6 pt-6">
                 <CardTitle className="text-base flex items-center gap-2"><Zap className="h-4 w-4 text-[#a855f7]" />What Was Being Built on Peak Day</CardTitle>
@@ -157,7 +157,7 @@ export default function ReportPage() {
             </Card>
           </section>
 
-          <Card className="col-span-2 bento-card animate-fade-in delay-400">
+          <Card className="col-span-full lg:col-span-2 bento-card animate-fade-in delay-400">
             <CardHeader className="pb-3 px-6 pt-6">
               <CardTitle className="text-base flex items-center gap-2"><BarChart3 className="h-4 w-4 text-[#a855f7]" />Daily Token Usage (Top 10 Days)</CardTitle>
             </CardHeader>
@@ -174,7 +174,7 @@ export default function ReportPage() {
 
           {/* ── HOURS SECTION ── */}
           <SectionHeader id="hours" icon={Clock} title="Working Hours" subtitle="Cursor usage and commit activity by hour" />
-          <section className="col-span-3">
+          <section className="col-span-full lg:col-span-3">
             <Card className="bento-card animate-fade-in delay-200">
               <CardHeader className="pb-3 px-6 pt-6">
                 <CardTitle className="text-base flex items-center gap-2"><Activity className="h-4 w-4 text-[#a855f7]" />Working Hours &mdash; Cursor Usage &amp; Commits Overlaid (IST)</CardTitle>
@@ -238,7 +238,7 @@ export default function ReportPage() {
 
           {/* ── DETAILS SECTION ── */}
           <SectionHeader id="details" icon={FileSearch} title="Pull Requests & Commits" subtitle="Full list of PRs and commit history" />
-          <section className="col-span-2 row-span-2">
+          <section className="col-span-full lg:col-span-2 lg:row-span-2">
             <Card className="bento-card animate-fade-in delay-300 h-full">
               <CardHeader className="pb-3 px-6 pt-6">
                 <CardTitle className="text-base flex items-center gap-2"><GitPullRequest className="h-4 w-4 text-[#a855f7]" />Pull Requests &amp; Commits</CardTitle>
@@ -312,7 +312,7 @@ export default function ReportPage() {
               <RepoContribCards repos={data.companyContributions.primaryRepos} />
 
               {/* Other repos */}
-              <Card className="col-span-2 bento-card animate-fade-in delay-500">
+              <Card className="col-span-full lg:col-span-2 bento-card animate-fade-in delay-500">
                 <CardHeader className="pb-2 px-6 pt-6">
                   <CardTitle className="text-base flex items-center gap-2"><Building2 className="h-4 w-4 text-[#a855f7]" />Other Evolphin Repos</CardTitle>
                   <p className="text-xs text-muted-foreground">Additional repositories with Sanjay&apos;s contributions</p>
@@ -339,7 +339,7 @@ export default function ReportPage() {
           <section className="col-span-full">
             <Card className="bento-card animate-fade-in delay-200 bg-gradient-to-r from-[#a855f7]/6 via-background to-[#7c3aed]/4 border-[#a855f7]/15">
               <CardContent className="py-8 px-8">
-                <div className="grid md:grid-cols-4 gap-8 items-center">
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 items-center">
                   <div>
                     <p className="text-xs text-muted-foreground uppercase tracking-widest mb-2">Personal AI Investment</p>
                     <p className="text-4xl font-bold">~&#x20B9;1,00,000</p>
@@ -350,7 +350,7 @@ export default function ReportPage() {
                       <Badge key={tool} variant="secondary" className="text-sm px-3 py-1">{tool}</Badge>
                     ))}
                   </div>
-                  <div className="md:col-span-2 space-y-4">
+                  <div className="md:col-span-2 lg:col-span-2 space-y-4">
                     <Narrative>
                       <p>
                         I use AI extensively in my day-to-day workflow &mdash; both for <span className="highlight">learning skills and exploring new ideas</span> and
@@ -409,7 +409,7 @@ export default function ReportPage() {
             </Narrative>
             <div className="bento-grid mt-6">
               {/* nonlu-skill — wide card */}
-              <Card className="col-span-2 bento-card animate-slide-up delay-300 group hover:border-[#a855f7]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#a855f7]/5">
+              <Card className="col-span-full md:col-span-2 bento-card animate-slide-up delay-300 group hover:border-[#a855f7]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#a855f7]/5">
                 <CardContent className="p-6 flex flex-col h-full">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
@@ -437,7 +437,7 @@ export default function ReportPage() {
               </Card>
 
               {/* kilasroom — narrow card */}
-              <Card className="col-span-1 bento-card animate-slide-up delay-400 group hover:border-[#a855f7]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#a855f7]/5">
+              <Card className="col-span-full md:col-span-1 bento-card animate-slide-up delay-400 group hover:border-[#a855f7]/40 transition-all duration-300 hover:shadow-lg hover:shadow-[#a855f7]/5">
                 <CardContent className="p-6 flex flex-col h-full">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
@@ -536,7 +536,7 @@ export default function ReportPage() {
                 </p>
               </CardHeader>
               <CardContent className="px-8 pb-8">
-                <div className="grid md:grid-cols-3 gap-6 mt-2">
+                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-2">
                   {/* Processed Data */}
                   <div className="space-y-3">
                     <div className="flex items-center gap-2 mb-4">
@@ -635,7 +635,7 @@ export default function ReportPage() {
                   <p className="text-sm text-muted-foreground mb-3">
                     Download the data files above, then attach them to any AI assistant (ChatGPT, Claude, Gemini) with this prompt for an independent analysis:
                   </p>
-                  <div className="bg-card/80 border border-border/50 rounded-lg p-5 font-mono text-xs text-foreground/70 leading-relaxed">
+                  <div className="bg-card/80 border border-border/50 rounded-lg p-4 md:p-5 font-mono text-xs text-foreground/70 leading-relaxed overflow-x-auto">
                     <p className="text-[#a855f7] mb-3 font-sans text-[10px] uppercase tracking-widest font-medium">Prompt to copy</p>
                     <p>I&apos;m attaching 4 data files for an employee&apos;s Cursor AI tool usage and GitHub activity over the last 30 days. Please perform an independent, objective audit:</p>
                     <p className="mt-3 font-sans text-[10px] text-[#a855f7] uppercase tracking-widest">Files attached:</p>
@@ -690,7 +690,7 @@ export default function ReportPage() {
         </div>
 
         {/* ═══ FOOTER ═══ */}
-        <div className="mt-8 pt-5 border-t border-border text-xs text-muted-foreground flex justify-between animate-fade-in delay-800">
+        <div className="mt-8 pt-5 border-t border-border text-xs text-muted-foreground flex flex-col sm:flex-row justify-between gap-1 animate-fade-in delay-800">
           <p>Data: Cursor billing CSV &amp; GitHub API (luv-jeri)</p>
           <p>Generated {new Date().toLocaleDateString("en-IN", { weekday: "long", day: "numeric", month: "long", year: "numeric" })}</p>
         </div>
