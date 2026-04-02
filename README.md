@@ -1,3 +1,23 @@
+<p align="center">
+  <a href="https://github.com/luv-jeri/usage-report">
+    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" width="80" />
+  </a>
+</p>
+
+<h3 align="center">Cursor Usage & Work Activity Report</h3>
+
+<p align="center">
+  Transparent breakdown of Cursor usage correlated with work output
+</p>
+
+<p align="center">
+  <a href="https://github.com/luv-jeri/usage-report">
+    <img src="https://img.shields.io/github/stars/luv-jeri/usage-report?style=social" alt="GitHub Stars" />
+  </a>
+</p>
+
+---
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

@@ -7,7 +7,6 @@ import {
   CreditCard, Flame, Clock, GitCommit, Building2, FileSearch,
   Wallet, Lightbulb, CheckCircle, BarChart3, Cpu, GitPullRequest,
   GitBranch, Activity, Zap, TrendingUp, Calendar, Hash,
-  MessageCircle, Sparkles, Bot
 } from "lucide-react";
 import { DailyTokenChart } from "@/components/daily-token-chart";
 import { HourlyChart } from "@/components/hourly-chart";
@@ -681,28 +680,6 @@ export default function ReportPage() {
                         </p>
                       </div>
 
-                      {/* Divider */}
-                      <div className="flex items-center gap-3">
-                        <div className="h-px flex-1 bg-gradient-to-r from-[#a855f7]/20 to-transparent" />
-                        <Sparkles className="w-3 h-3 text-[#a855f7]/40" />
-                        <div className="h-px flex-1 bg-gradient-to-l from-[#6366f1]/20 to-transparent" />
-                      </div>
-
-                      {/* Coming soon — Chatbot */}
-                      <div className="flex items-start gap-3 bg-[#a855f7]/[0.05] rounded-lg p-4 border border-[#a855f7]/10">
-                        <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#a855f7]/10 border border-[#a855f7]/20 shrink-0 mt-0.5">
-                          <Bot className="w-4 h-4 text-[#a855f7]" />
-                        </div>
-                        <div className="space-y-1.5">
-                          <div className="flex items-center gap-2">
-                            <p className="text-xs font-medium text-foreground/90">AI Chatbot — Coming Soon</p>
-                            <Badge variant="secondary" className="text-[9px] px-1.5 py-0 bg-[#a855f7]/10 text-[#a855f7] border-[#a855f7]/20">Soon</Badge>
-                          </div>
-                          <p className="text-xs text-muted-foreground leading-relaxed">
-                            I&apos;ll be adding an <span className="text-[#a855f7] font-medium">interactive chatbot</span> right here that can answer questions directly from this report&apos;s data — usage patterns, commit history, cost breakdowns, and more. Think of it as your personal analyst for this report, available anytime.
-                          </p>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
