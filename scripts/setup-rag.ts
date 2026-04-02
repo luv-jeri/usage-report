@@ -65,7 +65,6 @@ async function main() {
     const operation = await ai.fileSearchStores.importFile({
       fileSearchStoreName: storeName,
       fileName: uploaded.name!,
-      customMetadata: fileInfo.metadata,
     });
 
     await waitForOperation(ai, operation);

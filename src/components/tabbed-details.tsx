@@ -64,7 +64,7 @@ export function TabbedDetails({ commits, prs }: Props) {
                   {pr.state}
                 </Badge>
                 <span className="text-muted-foreground shrink-0 font-mono">{pr.repository.nameWithOwner.split("/")[1]}</span>
-                <span className="truncate">{pr.title}</span>
+                <a href={pr.url} target="_blank" rel="noopener noreferrer" className="truncate hover:underline hover:text-[#a855f7] transition-colors">{pr.title}</a>
               </div>
             ))}
           {tab === "commits" &&

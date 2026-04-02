@@ -112,7 +112,7 @@ export default function ReportPage() {
             <div className="bento-grid">
               <StatCard label="Peak Day" value={data.cursor.highestDay ? formatDate(data.cursor.highestDay.date) : "—"} accent delay="delay-100" />
               <StatCard label="Peak Tokens" value={`${((data.cursor.highestDay?.tokens || 0) / 1_000_000).toFixed(1)}M`} delay="delay-200" />
-              <StatCard label="Peak Cost" value={`$${(data.cursor.highestDay?.cost || 0).toFixed(2)}`} delay="delay-300" />
+              <StatCard label="Peak Day Features" value={String(data.peakDay.features.length)} detail="Tasks worked on" delay="delay-300" />
               <StatCard label="Peak Requests" value={String(data.cursor.highestDay?.requests || 0)} detail={`${data.cursor.highestDay?.freeRequests || 0} free`} delay="delay-400" />
             </div>
           </section>
@@ -148,7 +148,7 @@ export default function ReportPage() {
                   {data.peakDay.commits.slice(0, 5).map((c, i) => (
                     <div key={i} className="flex items-center gap-3 text-sm text-foreground/60">
                       <span className="font-mono text-muted-foreground text-xs">{c.time.slice(0, 5)}</span>
-                      <Badge variant="default" className="text-[8px] px-1.5 py-0">Co</Badge>
+                      <Badge variant="default" className="text-[8px] px-1.5 py-0 flex items-center gap-1"><img src="/logos/evolphin-icon.svg" alt="" className="h-3 w-3" />Evo</Badge>
                       <span className="truncate">{c.message}</span>
                     </div>
                   ))}
@@ -168,7 +168,7 @@ export default function ReportPage() {
 
           {/* ── Overall stats ── */}
           <StatCard label="Total Requests" value={String(data.cursor.totalRequests)} detail={`${data.cursor.freeRequests} free · ${data.cursor.paidRequests} paid`} delay="delay-100" />
-          <StatCard label="Total Cost" value={`$${data.cursor.totalCost.toFixed(2)}`} detail="On-demand charges" delay="delay-200" />
+          <StatCard label="Free Requests" value={String(data.cursor.freeRequests)} detail={`${((data.cursor.freeRequests / data.cursor.totalRequests) * 100).toFixed(0)}% of total`} delay="delay-200" />
           <StatCard label="Total Commits" value={String(data.commits.total)} detail={`${data.commits.company} Evolphin · ${data.commits.personal} personal`} delay="delay-300" />
           <StatCard label="Pull Requests" value={String(data.prs.total)} detail={`${data.prs.merged} merged · all Evolphin repos`} delay="delay-400" />
 
@@ -322,7 +322,7 @@ export default function ReportPage() {
                     {data.companyContributions.otherRepos.map((repo) => (
                       <div key={repo.name} className="flex items-center justify-between text-sm">
                         <div className="flex items-center gap-2">
-                          <Badge variant="default" className="text-[9px] px-1.5 py-0">Co</Badge>
+                          <Badge variant="default" className="text-[9px] px-1.5 py-0 flex items-center gap-1"><img src="/logos/evolphin-icon.svg" alt="" className="h-3 w-3" />Evo</Badge>
                           <span className="font-mono text-foreground/70">{repo.name}</span>
                         </div>
                         <span className="text-muted-foreground text-xs">{repo.commits} commits</span>
