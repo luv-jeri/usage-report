@@ -10,6 +10,7 @@ import { PRStatusChart } from "@/components/pr-status-chart";
 import { RatioBar } from "@/components/ratio-bar";
 import { TabbedDetails } from "@/components/tabbed-details";
 import { SideNav } from "@/components/side-nav";
+import { ContributorChart } from "@/components/contributor-chart";
 
 function formatDate(dateStr: string) {
   const d = new Date(dateStr + "T00:00:00");
@@ -46,7 +47,7 @@ export default function ReportPage() {
   return (
     <>
       <SideNav />
-      <main className="min-h-screen bg-background py-8 px-4 md:px-8 lg:px-10 max-w-[1400px] mx-auto lg:pr-24">
+      <main className="min-h-screen py-8 px-4 md:px-8 lg:px-10 max-w-[1400px] mx-auto lg:pr-24 relative z-[1]">
 
         {/* ═══ HERO ═══ */}
         <section id="hero">
@@ -268,6 +269,68 @@ export default function ReportPage() {
               </div>
             </CardContent>
           </Card>
+
+          {/* ── COMPANY CONTRIBUTIONS ── */}
+          <section id="company-work" className="col-span-full">
+            <div className="bento-grid">
+              {/* Summary stat cards */}
+              <StatCard label="Org Repos Contributed" value={String(data.companyContributions.reposContributed)} detail={`of ${data.companyContributions.totalOrgRepos} total`} accent delay="delay-100" />
+              <StatCard label="Total Lines Added" value={(() => { const total = data.companyContributions.primaryRepos.reduce((s, r) => s + (r.contributors.find(c => c.isSelf)?.additions || 0), 0); return total >= 1000 ? `${(total / 1000).toFixed(1)}K` : String(total); })()} detail="Across primary Evolphin repos" delay="delay-200" />
+              <StatCard label="Primary Repos Rank" value="#1" detail="Top contributor by LOC in all 3 repos" accent delay="delay-300" />
+              <StatCard label="Repos Contributed" value={String(data.companyContributions.primaryRepos.length + data.companyContributions.otherRepos.length)} detail={`${data.companyContributions.primaryRepos.length} primary · ${data.companyContributions.otherRepos.length} other`} delay="delay-400" />
+
+              {/* Per-repo charts — LOC focused */}
+              {data.companyContributions.primaryRepos.map((repo, idx) => {
+                const self = repo.contributors.find(c => c.isSelf);
+                const selfLOC = self?.additions || 0;
+                const totalLOC = repo.contributors.reduce((s, c) => s + c.additions, 0);
+                const selfPct = totalLOC > 0 ? ((selfLOC / totalLOC) * 100).toFixed(1) : "0";
+                const rankByLOC = [...repo.contributors].sort((a, b) => b.additions - a.additions).findIndex(c => c.isSelf) + 1;
+                return (
+                  <Card key={repo.name} className={`col-span-2 bento-card animate-slide-up delay-${(idx + 1) * 200}`}>
+                    <CardHeader className="pb-2 px-6 pt-6">
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-base font-mono">{repo.name}</CardTitle>
+                        <div className="flex items-center gap-2">
+                          <Badge variant="default" className="text-[10px]">#{rankByLOC} by LOC</Badge>
+                          <Badge variant="secondary" className="text-[10px]">{selfPct}% of lines</Badge>
+                        </div>
+                      </div>
+                      <p className="text-xs text-muted-foreground mt-1">{repo.description}</p>
+                    </CardHeader>
+                    <CardContent className="px-6 pb-6">
+                      <ContributorChart
+                        contributors={repo.contributors}
+                        dataKey="additions"
+                        label="Lines of Code Added"
+                      />
+                    </CardContent>
+                  </Card>
+                );
+              })}
+
+              {/* Other repos */}
+              <Card className="col-span-2 bento-card animate-fade-in delay-500">
+                <CardHeader className="pb-2 px-6 pt-6">
+                  <CardTitle className="text-base">Other Evolphin Repos</CardTitle>
+                  <p className="text-xs text-muted-foreground">Additional repositories with Sanjay&apos;s contributions</p>
+                </CardHeader>
+                <CardContent className="px-6 pb-6">
+                  <div className="space-y-3">
+                    {data.companyContributions.otherRepos.map((repo) => (
+                      <div key={repo.name} className="flex items-center justify-between text-sm">
+                        <div className="flex items-center gap-2">
+                          <Badge variant="default" className="text-[9px] px-1.5 py-0">Co</Badge>
+                          <span className="font-mono text-foreground/70">{repo.name}</span>
+                        </div>
+                        <span className="text-muted-foreground text-xs">{repo.commits} commits</span>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
 
           {/* ── INVESTMENT SECTION ── */}
           <section id="investment" className="col-span-full">

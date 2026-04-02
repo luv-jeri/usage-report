@@ -7,6 +7,7 @@ import { Separator } from "@/components/ui/separator";
 
 const sections = [
   { id: "hero", label: "Overview" },
+  { id: "company-work", label: "Company Work" },
   { id: "billing", label: "Billing" },
   { id: "peak-day", label: "Peak Day" },
   { id: "hours", label: "Hours" },

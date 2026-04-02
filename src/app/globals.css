@@ -148,7 +148,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
   }
   html {
     @apply font-sans;
@@ -309,4 +309,72 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(168, 85, 247, 0.3);
+}
+
+/* ═══════════════════════════════════════════════════
+   BACKGROUND PATTERN — "Luminous Grid"
+   Layered: base color → gradient orbs → grid + dots
+   ═══════════════════════════════════════════════════ */
+
+.bg-pattern {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: var(--background);
+  overflow: hidden;
+}
+
+/* Layer 1: Ambient gradient orbs — slow organic drift */
+.bg-pattern::before {
+  content: '';
+  position: absolute;
+  inset: -15%;
+  width: 130%;
+  height: 130%;
+  background:
+    radial-gradient(650px 550px at 6% 5%, rgba(168, 85, 247, 0.14), transparent),
+    radial-gradient(500px 600px at 90% 15%, rgba(124, 58, 237, 0.1), transparent),
+    radial-gradient(750px 400px at 30% 90%, rgba(139, 92, 246, 0.08), transparent),
+    radial-gradient(400px 450px at 75% 55%, rgba(109, 40, 217, 0.06), transparent);
+  animation: ambientDrift 35s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Layer 2: Fine grid lines + intersection dots */
+.bg-pattern::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(168, 85, 247, 0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.06) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(168, 85, 247, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.25) 50%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.25) 50%, transparent 75%);
+}
+
+@keyframes ambientDrift {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(1.8%, -1.2%) rotate(0.4deg); }
+  45% { transform: translate(-1.2%, 1.8%) rotate(-0.3deg); }
+  70% { transform: translate(0.8%, -0.5%) rotate(0.2deg); }
+}
+
+/* Light mode pattern adjustments */
+.light-mode .bg-pattern::before {
+  background:
+    radial-gradient(600px 500px at 8% 8%, rgba(124, 58, 237, 0.06), transparent),
+    radial-gradient(450px 550px at 88% 18%, rgba(109, 40, 217, 0.05), transparent),
+    radial-gradient(700px 350px at 35% 88%, rgba(139, 92, 246, 0.04), transparent),
+    radial-gradient(350px 400px at 72% 62%, rgba(168, 85, 247, 0.035), transparent);
+}
+
+.light-mode .bg-pattern::after {
+  background-image:
+    radial-gradient(circle, rgba(124, 58, 237, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.06) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(124, 58, 237, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
 }

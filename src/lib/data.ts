@@ -106,8 +106,34 @@ function parseCommitsCSV(csvText: string): Commit[] {
   return commits;
 }
 
+export interface CompanyContributions {
+  username: string;
+  displayName: string;
+  orgName: string;
+  totalOrgRepos: number;
+  reposContributed: number;
+  primaryRepos: {
+    name: string;
+    url: string;
+    description: string;
+    contributors: {
+      login: string;
+      displayName: string;
+      commits: number;
+      additions: number;
+      deletions: number;
+      isSelf: boolean;
+    }[];
+    totalCommits: number;
+  }[];
+  otherRepos: { name: string; commits: number; url: string }[];
+}
+
 export function loadData() {
   const dataDir = path.join(process.cwd(), "public", "data");
+
+  const companyContribJSON = fs.readFileSync(path.join(dataDir, "company-contributions.json"), "utf-8");
+  const companyContributions: CompanyContributions = JSON.parse(companyContribJSON);
 
   const cursorCSV = fs.readFileSync(
     path.join(dataDir, "cursor-usage.csv"),
@@ -253,6 +279,7 @@ export function loadData() {
   }
 
   return {
+    companyContributions,
     cursor: {
       events: cursorEvents,
       dailyUsage,

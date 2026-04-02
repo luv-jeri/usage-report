@@ -1,0 +1,49 @@
+{
+  "username": "luv-jeri",
+  "displayName": "Sanjay Kumar Gautam",
+  "orgName": "Evolphin-Software",
+  "totalOrgRepos": 19,
+  "reposContributed": 6,
+  "primaryRepos": [
+    {
+      "name": "evolphin-x",
+      "url": "https://github.com/Evolphin-Software/evolphin-x",
+      "description": "Main product frontend",
+      "contributors": [
+        { "login": "luv-jeri", "displayName": "Sanjay", "commits": 166, "additions": 37484, "deletions": 8333, "isSelf": true },
+        { "login": "dishikajain0506", "displayName": "Dishika", "commits": 128, "additions": 15898, "deletions": 5524, "isSelf": false },
+        { "login": "paramjeetY", "displayName": "Paramjeet", "commits": 124, "additions": 8718, "deletions": 5403, "isSelf": false },
+        { "login": "padmoranjali", "displayName": "Ranjali", "commits": 34, "additions": 2279, "deletions": 718, "isSelf": false },
+        { "login": "nishant771310", "displayName": "Nishant", "commits": 14, "additions": 15, "deletions": 11, "isSelf": false },
+        { "login": "aakash-evolphin", "displayName": "Aakash", "commits": 11, "additions": 102, "deletions": 42, "isSelf": false }
+      ],
+      "totalCommits": 479
+    },
+    {
+      "name": "evolphin-ui-library",
+      "url": "https://github.com/Evolphin-Software/evolphin-ui-library",
+      "description": "Shared UI component library",
+      "contributors": [
+        { "login": "luv-jeri", "displayName": "Sanjay", "commits": 44, "additions": 449418, "deletions": 6826, "isSelf": true },
+        { "login": "aakash-evolphin", "displayName": "Aakash", "commits": 18, "additions": 118, "deletions": 101, "isSelf": false },
+        { "login": "nishant771310", "displayName": "Nishant", "commits": 4, "additions": 56, "deletions": 91, "isSelf": false }
+      ],
+      "totalCommits": 66
+    },
+    {
+      "name": "native-connector-evo-x",
+      "url": "https://github.com/Evolphin-Software/native-connector-evo-x",
+      "description": "Native desktop connector",
+      "contributors": [
+        { "login": "luv-jeri", "displayName": "Sanjay", "commits": 35, "additions": 16160, "deletions": 8736, "isSelf": true },
+        { "login": "claude", "displayName": "Claude (AI)", "commits": 9, "additions": 9227, "deletions": 9, "isSelf": false }
+      ],
+      "totalCommits": 44
+    }
+  ],
+  "otherRepos": [
+    { "name": "pico-webflow-widgets", "commits": 59, "url": "https://github.com/Evolphin-Software/pico-webflow-widgets" },
+    { "name": "surfaceX", "commits": 17, "url": "https://github.com/Evolphin-Software/surfaceX" },
+    { "name": "project-x-connector", "commits": 2, "url": "https://github.com/Evolphin-Software/project-x-connector" }
+  ]
+}
