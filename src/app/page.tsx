@@ -6,7 +6,8 @@ import {
   Download, FileSpreadsheet, FileText, Receipt,
   CreditCard, Flame, Clock, GitCommit, Building2, FileSearch,
   Wallet, Lightbulb, CheckCircle, BarChart3, Cpu, GitPullRequest,
-  GitBranch, Activity, Zap, TrendingUp, Calendar, Hash
+  GitBranch, Activity, Zap, TrendingUp, Calendar, Hash,
+  MessageCircle, Sparkles, Bot
 } from "lucide-react";
 import { DailyTokenChart } from "@/components/daily-token-chart";
 import { HourlyChart } from "@/components/hourly-chart";
@@ -70,7 +71,7 @@ export default function ReportPage() {
   return (
     <>
       <SideNav />
-      <main className="min-h-screen bg-background py-8 px-4 md:px-8 lg:px-10 max-w-[1400px] mx-auto lg:pr-24">
+      <main className="min-h-screen bg-background py-8 pb-24 px-4 md:px-8 lg:px-10 max-w-[1400px] mx-auto lg:pr-24">
 
         {/* ═══ HERO ═══ */}
         <section id="hero">
@@ -654,12 +655,56 @@ export default function ReportPage() {
                   </div>
                 </div>
 
-                {/* Quick Note — GitHub Integration */}
-                <div className="mt-6 bg-gradient-to-br from-[#a855f7]/5 to-[#6366f1]/5 border border-[#a855f7]/20 rounded-lg p-5">
-                  <p className="text-[10px] text-[#a855f7] uppercase tracking-widest font-medium mb-2">A Gentle Reminder</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    If you&apos;d like, I&apos;m happy to share my GitHub token or credentials so we can pull GitHub data directly and make this review even smoother. It&apos;s already been shared with the team, so no worries at all — just thought it might save everyone a bit of time. Please feel free to let me know if that would be helpful!
-                  </p>
+                {/* ── Quick Note — GitHub & Chatbot ── */}
+                <div className="mt-8 pt-6 border-t border-border/30">
+                  <div className="relative overflow-hidden rounded-xl border border-[#a855f7]/20 bg-gradient-to-br from-[#a855f7]/[0.04] via-background to-[#6366f1]/[0.04]">
+                    {/* Decorative quote mark */}
+                    <div className="absolute -top-4 -left-2 text-[120px] leading-none text-[#a855f7]/[0.06] font-serif pointer-events-none select-none">&ldquo;</div>
+                    <div className="absolute -bottom-8 -right-2 text-[120px] leading-none text-[#6366f1]/[0.06] font-serif pointer-events-none select-none">&rdquo;</div>
+
+                    <div className="relative p-6 space-y-5">
+                      {/* Header */}
+                      <div className="flex items-center gap-3">
+                        <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#a855f7]/10 border border-[#a855f7]/20">
+                          <GitBranch className="w-4 h-4 text-[#a855f7]" />
+                        </div>
+                        <div>
+                          <p className="text-[10px] text-[#a855f7] uppercase tracking-widest font-medium">A Quick Note</p>
+                          <p className="text-[10px] text-muted-foreground/60 mt-0.5">From Sanjay</p>
+                        </div>
+                      </div>
+
+                      {/* Quote-style message */}
+                      <div className="pl-4 border-l-2 border-[#a855f7]/30">
+                        <p className="text-sm text-foreground/80 leading-relaxed italic">
+                          &ldquo;If it would be helpful, I&apos;m more than happy to share my GitHub token or credentials so we can pull the data directly — it might save everyone a bit of time. It&apos;s already been shared with the team, so please don&apos;t hesitate to let me know!&rdquo;
+                        </p>
+                      </div>
+
+                      {/* Divider */}
+                      <div className="flex items-center gap-3">
+                        <div className="h-px flex-1 bg-gradient-to-r from-[#a855f7]/20 to-transparent" />
+                        <Sparkles className="w-3 h-3 text-[#a855f7]/40" />
+                        <div className="h-px flex-1 bg-gradient-to-l from-[#6366f1]/20 to-transparent" />
+                      </div>
+
+                      {/* Coming soon — Chatbot */}
+                      <div className="flex items-start gap-3 bg-[#a855f7]/[0.05] rounded-lg p-4 border border-[#a855f7]/10">
+                        <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-[#a855f7]/10 border border-[#a855f7]/20 shrink-0 mt-0.5">
+                          <Bot className="w-4 h-4 text-[#a855f7]" />
+                        </div>
+                        <div className="space-y-1.5">
+                          <div className="flex items-center gap-2">
+                            <p className="text-xs font-medium text-foreground/90">AI Chatbot — Coming Soon</p>
+                            <Badge variant="secondary" className="text-[9px] px-1.5 py-0 bg-[#a855f7]/10 text-[#a855f7] border-[#a855f7]/20">Soon</Badge>
+                          </div>
+                          <p className="text-xs text-muted-foreground leading-relaxed">
+                            I&apos;ll be adding an <span className="text-[#a855f7] font-medium">interactive chatbot</span> right here that can answer questions directly from this report&apos;s data — usage patterns, commit history, cost breakdowns, and more. Think of it as your personal analyst for this report, available anytime.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
