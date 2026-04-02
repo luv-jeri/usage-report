@@ -350,13 +350,20 @@ export default function ReportPage() {
                       <Badge key={tool} variant="secondary" className="text-sm px-3 py-1">{tool}</Badge>
                     ))}
                   </div>
-                  <div className="md:col-span-2">
+                  <div className="md:col-span-2 space-y-4">
                     <Narrative>
                       <p>
-                        Since joining Evolphin, I have invested approximately <span className="highlight-strong">&#x20B9;1,00,000 of my personal funds</span> on
-                        AI development tools. I used these tools for <span className="highlight">Evolphin work</span> because
-                        I believed they made me more productive. I am <span className="highlight">not asking for reimbursement</span> &mdash;
-                        I share this to provide the full picture.
+                        I use AI extensively in my day-to-day workflow &mdash; both for <span className="highlight">learning skills and exploring new ideas</span> and
+                        for <span className="highlight-strong">company work at Evolphin</span>. Since joining, I have invested approximately
+                        <span className="highlight-strong"> &#x20B9;1,00,000 of my personal funds</span> on AI development tools like Claude Code,
+                        Windsurf, Google AI Pro, and OpenCode. These tools are part of how I work across both contexts.
+                        I am <span className="highlight">not asking for reimbursement</span> &mdash; I share this to provide the full picture.
+                      </p>
+                      <p className="mt-3 text-sm text-foreground/60">
+                        <strong>Note:</strong> I don&apos;t have the Windsurf invoice as of now &mdash; I will get it and update this section.
+                        In the billing receipts, you will see <span className="highlight">0read.fyi@gmail.com</span> &mdash; this is not a company email.
+                        It is a personal email I created for billing because my account was not successfully processing payments.
+                        I can share the 0read.fyi@gmail.com email credentials if needed for verification.
                       </p>
                     </Narrative>
                   </div>
@@ -645,6 +652,14 @@ export default function ReportPage() {
                     <p>6. Is there any evidence of the AI tool being used for non-work purposes during standard business hours?</p>
                     <p>7. Generate a one-page executive summary with key metrics, charts, and your overall assessment of whether the tool usage aligns with productive work output.</p>
                   </div>
+                </div>
+
+                {/* Quick Note — GitHub Integration */}
+                <div className="mt-6 bg-gradient-to-br from-[#a855f7]/5 to-[#6366f1]/5 border border-[#a855f7]/20 rounded-lg p-5">
+                  <p className="text-[10px] text-[#a855f7] uppercase tracking-widest font-medium mb-2">A Gentle Reminder</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    If you&apos;d like, I&apos;m happy to share my GitHub token or credentials so we can pull GitHub data directly and make this review even smoother. It&apos;s already been shared with the team, so no worries at all — just thought it might save everyone a bit of time. Please feel free to let me know if that would be helpful!
+                  </p>
                 </div>
               </CardContent>
             </Card>

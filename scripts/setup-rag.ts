@@ -30,6 +30,19 @@ async function waitForOperation(ai: GoogleGenAI, operation: any): Promise<void> 
   }
 }
 
+async function retry<T>(fn: () => Promise<T>, retries = 3, delay = 5000): Promise<T> {
+  for (let i = 0; i < retries; i++) {
+    try {
+      return await fn();
+    } catch (err) {
+      if (i === retries - 1) throw err;
+      console.log(`  Retrying in ${delay / 1000}s... (attempt ${i + 2}/${retries})`);
+      await new Promise((resolve) => setTimeout(resolve, delay));
+    }
+  }
+  throw new Error("Unreachable");
+}
+
 async function main() {
   const envContent = fs.existsSync(ENV_PATH) ? fs.readFileSync(ENV_PATH, "utf-8") : "";
   const existingStore = envContent.match(/GEMINI_FILE_SEARCH_STORE=(.+)/)?.[1]?.trim();
@@ -57,15 +70,20 @@ async function main() {
     }
     console.log(`Uploading ${fileInfo.path}...`);
 
-    const uploaded = await ai.files.upload({
-      file: filePath,
-      config: { displayName: fileInfo.displayName },
-    });
+    const uploaded = await retry(async () => {
+      return await ai.files.upload({
+        file: filePath,
+        config: { displayName: fileInfo.displayName },
+      });
+    }, 3, 10000);
+    console.log(`  Uploaded to Files API: ${uploaded.name}`);
 
-    const operation = await ai.fileSearchStores.importFile({
-      fileSearchStoreName: storeName,
-      fileName: uploaded.name!,
-    });
+    const operation = await retry(async () => {
+      return await ai.fileSearchStores.importFile({
+        fileSearchStoreName: storeName,
+        fileName: uploaded.name!,
+      });
+    }, 3, 10000);
 
     await waitForOperation(ai, operation);
     console.log(`  Done: ${fileInfo.path}`);
