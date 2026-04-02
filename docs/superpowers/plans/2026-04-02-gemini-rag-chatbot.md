@@ -47,7 +47,7 @@ Expected: Package added to `dependencies` in `package.json`.
 Create `/Users/sanjaykumar/Documents/u-p0/usage-report/.env.local`:
 
 ```
-GEMINI_API_KEY=AIzaSyBTbAQkOllZedJHzlGppcy3ip93uFz9V9g
+GEMINI_API_KEY=<your-api-key-here>
 GEMINI_FILE_SEARCH_STORE=
 ```
 
